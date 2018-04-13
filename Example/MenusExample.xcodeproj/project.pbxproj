@@ -8,21 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		0786EF0C2080C7FA00BBA5C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786EF0B2080C7FA00BBA5C6 /* AppDelegate.swift */; };
-		0786EF0E2080C7FA00BBA5C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786EF0D2080C7FA00BBA5C6 /* ViewController.swift */; };
+		0786EF0E2080C7FA00BBA5C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786EF0D2080C7FA00BBA5C6 /* MainViewController.swift */; };
 		0786EF112080C7FA00BBA5C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0786EF0F2080C7FA00BBA5C6 /* Main.storyboard */; };
 		0786EF132080C7FB00BBA5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0786EF122080C7FB00BBA5C6 /* Assets.xcassets */; };
 		0786EF162080C7FB00BBA5C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0786EF142080C7FB00BBA5C6 /* LaunchScreen.storyboard */; };
+		07C3EFA72080CD0400B34DA3 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFA62080CD0400B34DA3 /* MainMenu.swift */; };
+		07C3EFA92080CD5500B34DA3 /* OptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFA82080CD5500B34DA3 /* OptionsMenu.swift */; };
+		07C3EFAB2080CE3500B34DA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFAA2080CE3500B34DA3 /* ViewController.swift */; };
+		07C3EFAD2080DBCD00B34DA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */; };
 		4B9A2A8AB98616D2BC9F711F /* Pods_MenusExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49EF47846A2ECEAF5CB0760 /* Pods_MenusExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0786EF082080C7FA00BBA5C6 /* MenusExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenusExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0786EF0B2080C7FA00BBA5C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0786EF0D2080C7FA00BBA5C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0786EF0D2080C7FA00BBA5C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0786EF102080C7FA00BBA5C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0786EF122080C7FB00BBA5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0786EF152080C7FB00BBA5C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0786EF172080C7FB00BBA5C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C3EFA62080CD0400B34DA3 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		07C3EFA82080CD5500B34DA3 /* OptionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsMenu.swift; sourceTree = "<group>"; };
+		07C3EFAA2080CE3500B34DA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B1780B5DFA6B14B3ADFF07F3 /* Pods-MenusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenusExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenusExample/Pods-MenusExample.release.xcconfig"; sourceTree = "<group>"; };
 		E5FF0059F500FB902739FE54 /* Pods-MenusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenusExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenusExample/Pods-MenusExample.debug.xcconfig"; sourceTree = "<group>"; };
 		F49EF47846A2ECEAF5CB0760 /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				0786EF0B2080C7FA00BBA5C6 /* AppDelegate.swift */,
-				0786EF0D2080C7FA00BBA5C6 /* ViewController.swift */,
+				0786EF0D2080C7FA00BBA5C6 /* MainViewController.swift */,
+				07C3EFAA2080CE3500B34DA3 /* ViewController.swift */,
+				07C3EFA62080CD0400B34DA3 /* MainMenu.swift */,
+				07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */,
+				07C3EFA82080CD5500B34DA3 /* OptionsMenu.swift */,
 				0786EF0F2080C7FA00BBA5C6 /* Main.storyboard */,
 				0786EF122080C7FB00BBA5C6 /* Assets.xcassets */,
 				0786EF142080C7FB00BBA5C6 /* LaunchScreen.storyboard */,
@@ -216,7 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0786EF0E2080C7FA00BBA5C6 /* ViewController.swift in Sources */,
+				07C3EFAD2080DBCD00B34DA3 /* AboutViewController.swift in Sources */,
+				07C3EFAB2080CE3500B34DA3 /* ViewController.swift in Sources */,
+				0786EF0E2080C7FA00BBA5C6 /* MainViewController.swift in Sources */,
+				07C3EFA92080CD5500B34DA3 /* OptionsMenu.swift in Sources */,
+				07C3EFA72080CD0400B34DA3 /* MainMenu.swift in Sources */,
 				0786EF0C2080C7FA00BBA5C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -365,7 +381,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3VKVFB3SA;
 				INFOPLIST_FILE = MenusExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.mobilion.MenusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -381,7 +401,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3VKVFB3SA;
 				INFOPLIST_FILE = MenusExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.mobilion.MenusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

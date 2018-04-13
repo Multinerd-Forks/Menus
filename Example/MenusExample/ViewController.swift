@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import Menus
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MenuContainable {
+
+    @IBAction func didTapLeftBarButtonItem(_ sender: UIBarButtonItem) {
+        container?.leftMenu?.toggle()
+    }
+
+    @IBAction func didTapRightBarButtonItem(_ sender: UIBarButtonItem) {
+        container?.rightMenu?.toggle()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        container?.leftMenu?.delegate = self
+        container?.rightMenu?.delegate = self
     }
-
 
 }
 
+extension ViewController: MenuDelegate {
+
+    func menu(_ menu: MenuViewController, didClose animated: Bool) {
+        print("\(menu.side) menu did close")
+    }
+
+}

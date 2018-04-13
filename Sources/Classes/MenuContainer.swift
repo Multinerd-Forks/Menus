@@ -36,9 +36,6 @@ open class MenuContainer: UIViewController {
     public var currentViewController: UIViewController? {
         didSet {
             oldValue?.remove()
-            setEdgePanGestureRecognizer(for: .left)
-            setEdgePanGestureRecognizer(for: .right)
-
             guard let controller = currentViewController else { return }
             setCurrentViewController(controller)
 
@@ -83,6 +80,12 @@ private extension MenuContainer {
         controller.didMove(toParentViewController: self)
 
         setCloseMenusPanGestureRecognizer()
+
+        setEdgePanGestureRecognizer(for: .left)
+        setMenuPanGestureRecognizer(for: .left)
+
+        setEdgePanGestureRecognizer(for: .right)
+        setMenuPanGestureRecognizer(for: .right)
     }
 
     func setMenu(_ menu: MenuViewController, side: MenuSide) {
@@ -247,41 +250,12 @@ private extension MenuContainer {
     }
 
     @objc func didPanCurrentView(_ sender: UIPanGestureRecognizer) {
-        //        let xTranslation = sender.translation(in: currentViewController?.view).x
-        //        print(xTranslation)
-
-        //        if xTranslation < 0 {
-        //            if let menu = leftMenu, menu.shouldCloseWhenTappingCurrentView {
-        //                handlePanGestureRecognizer(sender, side: .left)
-        //            }
-        //        } else {
-        //            if let menu = rightMenu, menu.shouldCloseWhenTappingCurrentView {
-        ////                menu.close()
-        //            }
-        //        }
     }
 
     @objc func didPanToCloseLeftMenu(_ sender: UIPanGestureRecognizer) {
-        let xTranslation = sender.translation(in: leftMenu?.view).x
-        print(xTranslation)
-        handlePanGestureRecognizer(sender, side: .left)
-        //
-        //        if xTranslation < 0 {
-        //            if let menu = leftMenu, menu.state == .open, menu.shouldCloseWhenTappingCurrentView {
-        //                menu.close()
-        //            }
-        //        }
     }
 
     @objc func didPanToCloseRightMenu(_ sender: UIPanGestureRecognizer) {
-        //        let xTranslation = sender.translation(in: rightMenu?.view).x
-        //        print(xTranslation)
-        //
-        //        if xTranslation > 0 {
-        //            if let menu = rightMenu, menu.state == .open, menu.shouldCloseWhenTappingCurrentView {
-        //                menu.close()
-        //            }
-        //        }
     }
 
 }
