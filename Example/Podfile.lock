@@ -1,0 +1,16 @@
+PODS:
+  - Menus (0.1)
+
+DEPENDENCIES:
+  - Menus (from `../`)
+
+EXTERNAL SOURCES:
+  Menus:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Menus: 0f5f6532f53f18415eb23b0d1d702cd6b0621393
+
+PODFILE CHECKSUM: af5fb0eca03daad4a1ec12d459793baa147fe231
+
+COCOAPODS: 1.4.0

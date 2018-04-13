@@ -1,0 +1,6 @@
+framework module Menus {
+  umbrella header "Menus-umbrella.h"
+
+  export *
+  module * { export * }
+}
