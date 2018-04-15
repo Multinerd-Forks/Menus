@@ -13,7 +13,7 @@ class MainMenu: UITableViewController, MenuType {
 
     weak var delegate: MenuDelegate?
 
-    var animator: UIViewPropertyAnimator!
+    var animator: UIViewPropertyAnimator?
 
     var container: MenuContainer!
 
@@ -39,9 +39,7 @@ class MainMenu: UITableViewController, MenuType {
             container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "NavigationController")
             close()
         case 1:
-            close {
-                self.container.rightMenu?.open(animated: true)
-            }
+			container.rightMenu?.open(animated: true)
         case 2:
             let url = URL(string: "https://github.com/MobilionOSS/Menus")!
             close {

@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ContainerViewController.swift
 //  MenusExample
 //
 //  Created by Omar Albeik on 4/13/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Menus
 
-class MainViewController: MenuContainer {
+class ContainerViewController: MenuContainer {
 
     override func viewDidLoad() {
         super.viewDidLoad()

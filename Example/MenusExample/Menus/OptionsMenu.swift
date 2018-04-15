@@ -13,7 +13,7 @@ class OptionsMenu: UIViewController, MenuType {
 
     var delegate: MenuDelegate?
 
-    var animator: UIViewPropertyAnimator!
+    var animator: UIViewPropertyAnimator?
 
     var container: MenuContainer!
 
@@ -29,10 +29,6 @@ class OptionsMenu: UIViewController, MenuType {
 
     var menuWidth: CGFloat {
         return 200
-    }
-
-    var currentViewCornerRadius: CGFloat {
-        return 0
     }
 
     override func viewDidLoad() {

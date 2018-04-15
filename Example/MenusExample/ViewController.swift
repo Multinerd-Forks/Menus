@@ -28,10 +28,4 @@ class ViewController: UIViewController, MenuContainable {
 
 }
 
-extension ViewController: MenuDelegate {
-
-    func menu(_ menu: MenuViewController, didClose animated: Bool) {
-        print("\(menu.side) menu did close")
-    }
-
-}
+extension ViewController: MenuDelegate {}
