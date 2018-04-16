@@ -22,7 +22,6 @@
 		6B5C500419627547C9E2945BE42B1FCD /* MenuSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6D750CB18558B12AEFEB8A9FEC362 /* MenuSide.swift */; };
 		B231064D211516ABDA6CF882CDB75E05 /* MenuContainer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71328355D04471750B79810C617C798 /* MenuContainer+Helpers.swift */; };
 		B7C7B2844BC7FF651492022BF5CE4097 /* MenuContainer+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F33A940F9E58D6DE5A848D23742533 /* MenuContainer+Setup.swift */; };
-		D7028E2E6278E50726C2049DE6958303 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B9B0C042908A43DAD00959E0BA6B1 /* Extensions.swift */; };
 		D8B5403C81783BDE8382BB9E4C6FA136 /* MenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321832CF4A02BBFCD39C8EF62FA36AB8 /* MenuContainer.swift */; };
 		EF6B5D39333D6EA299F2B6642CDA3039 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
 		F7B4C0C0E5C7F5D5E5821D7E799D563D /* Pods-MenusExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1DA908616CE222C92E767205B8CA9 /* Pods-MenusExample-dummy.m */; };
@@ -41,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		06ED57E2BF99D610E7C9A9FC808C3A31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PanGestureRecognizer.swift; path = ../Classes/PanGestureRecognizer.swift; sourceTree = "<group>"; };
+		070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureRecognizer.swift; sourceTree = "<group>"; };
 		07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
 		07ADC60120847D8F00715BBC /* MenuPanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPanning.swift; sourceTree = "<group>"; };
 		0EAE4DE56BB8D6C0D22599D7E04FD82C /* MenuState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B76044B6B1903F98F78C89040DB3BE41 /* Pods-MenusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenusExample.release.xcconfig"; sourceTree = "<group>"; };
 		B9509F932223E8A24902AE8011BF43A4 /* Pods-MenusExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenusExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		C20B9B0C042908A43DAD00959E0BA6B1 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C333CD48F8C01DCF6450B1D2C9EAF76B /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DFE6D750CB18558B12AEFEB8A9FEC362 /* MenuSide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuSide.swift; sourceTree = "<group>"; };
@@ -100,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0768F47220847EFF0007565F /* MenuContainer */ = {
+			isa = PBXGroup;
+			children = (
+				321832CF4A02BBFCD39C8EF62FA36AB8 /* MenuContainer.swift */,
+				E2F33A940F9E58D6DE5A848D23742533 /* MenuContainer+Setup.swift */,
+				A71328355D04471750B79810C617C798 /* MenuContainer+Helpers.swift */,
+				1AA11055798DCA5FC5A67E82DC4746D9 /* MenuContainer+Selectors.swift */,
+			);
+			path = MenuContainer;
+			sourceTree = "<group>";
+		};
 		18F5EDCA22595CB7105416465D37CF5A /* Pods-MenusExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +139,9 @@
 		2C582CF7321BF39E203BA8C1290B7EFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				321832CF4A02BBFCD39C8EF62FA36AB8 /* MenuContainer.swift */,
-				A71328355D04471750B79810C617C798 /* MenuContainer+Helpers.swift */,
-				1AA11055798DCA5FC5A67E82DC4746D9 /* MenuContainer+Selectors.swift */,
-				E2F33A940F9E58D6DE5A848D23742533 /* MenuContainer+Setup.swift */,
+				0768F47220847EFF0007565F /* MenuContainer */,
+				070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */,
+				07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */,
 			);
 			name = Classes;
 			path = Sources/Classes;
@@ -178,25 +186,13 @@
 			path = Sources/Enums;
 			sourceTree = "<group>";
 		};
-		5E2C56E2D9B35621A0BE5784CDFE4EEE /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				C20B9B0C042908A43DAD00959E0BA6B1 /* Extensions.swift */,
-				070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */,
-				07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */,
-			);
-			name = Common;
-			path = Sources/Common;
-			sourceTree = "<group>";
-		};
 		6E972A4746C968EC4DDEF7CAEFE6F7C3 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				4B259F11ED3FD5BB72B4AE78D683FE32 /* Protocols */,
 				2C582CF7321BF39E203BA8C1290B7EFE /* Classes */,
-				5E2C56E2D9B35621A0BE5784CDFE4EEE /* Common */,
 				5BF146362EF3797237CEC2CB43ACF181 /* Enums */,
 				AD04E2BA0C84DB7ACF2FCF0F5B5F682F /* Pod */,
-				4B259F11ED3FD5BB72B4AE78D683FE32 /* Protocols */,
 				7617AB3AC5416B6E6B189B709F095ED1 /* Support Files */,
 			);
 			name = Menus;
@@ -343,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7028E2E6278E50726C2049DE6958303 /* Extensions.swift in Sources */,
 				3A82936F88711C6F0A31BFC08B7FAA4B /* MenuContainable.swift in Sources */,
 				B231064D211516ABDA6CF882CDB75E05 /* MenuContainer+Helpers.swift in Sources */,
 				F8EC48960DC9509ADDA18A14833BF491 /* MenuContainer+Selectors.swift in Sources */,

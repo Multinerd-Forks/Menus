@@ -31,6 +31,10 @@ class MainMenu: UITableViewController, MenuType {
 		return false
 	}
 
+    var currentViewBlurStyle: UIBlurEffectStyle? {
+        return .dark
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

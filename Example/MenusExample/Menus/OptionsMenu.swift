@@ -31,6 +31,10 @@ class OptionsMenu: UIViewController, MenuType {
         return 200
     }
 
+    var currentViewBlurStyle: UIBlurEffectStyle? {
+        return nil
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

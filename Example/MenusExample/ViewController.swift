@@ -28,4 +28,22 @@ class ViewController: UIViewController, MenuContainable {
 
 }
 
-extension ViewController: MenuDelegate {}
+extension ViewController: MenuDelegate {
+
+    func menu(_ menu: MenuViewController, willOpen animated: Bool) {
+        print("\(menu.side) menu will open")
+    }
+
+    func menu(_ menu: MenuViewController, didOpen animated: Bool) {
+        print("\(menu.side) menu did open")
+    }
+
+    func menu(_ menu: MenuViewController, willClose animated: Bool) {
+        print("\(menu.side) menu will close")
+    }
+
+    func menu(_ menu: MenuViewController, didClose animated: Bool) {
+        print("\(menu.side) menu did close")
+    }
+
+}

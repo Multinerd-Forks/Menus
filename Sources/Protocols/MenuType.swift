@@ -26,6 +26,8 @@ public protocol MenuType: class {
 
 	var menuWidth: CGFloat { get }
 
+    var currentViewBlurStyle: UIBlurEffectStyle? { get }
+
 	var animationDuration: TimeInterval { get }
 
 	var animationDampingRatio: CGFloat { get }
@@ -55,6 +57,10 @@ public extension MenuType where Self: UIViewController {
 	public var menuWidth: CGFloat {
 		return 250
 	}
+
+    public var currentViewBlurStyle: UIBlurEffectStyle? {
+        return .regular
+    }
 
 	public var animationDuration: TimeInterval {
 		return 0.4
@@ -125,7 +131,18 @@ internal extension MenuType where Self: UIViewController {
 	}
 
 	internal func animator(for state: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) -> UIViewPropertyAnimator {
-		let stateAnimator = UIViewPropertyAnimator(duration: animated ? animationDuration : 0, dampingRatio: animationDampingRatio) {
+
+        container.blurView = UIVisualEffectView()
+        switch state {
+        case .open:
+            self.container.blurView?.effect = nil
+        case .closed:
+            if let style = self.currentViewBlurStyle {
+                self.container.blurView?.effect = UIBlurEffect(style: style)
+            }
+        }
+
+        let stateAnimator = UIViewPropertyAnimator(duration: animated ? animationDuration : 0, dampingRatio: animationDampingRatio) { [unowned self] in
 			let transform = self.transform(for: state, side: self.side)
 			let cornerRadius = self.cornerRadius(for: state)
 
@@ -136,25 +153,38 @@ internal extension MenuType where Self: UIViewController {
 			self.container.currentViewController?.view.layer.cornerRadius = cornerRadius
 		}
 
-		stateAnimator.addCompletion { position in
-			switch position {
-			case .start:
-				self.delegate?.menu(self, didClose: animated)
-			case .end:
-				self.view.tag = state == .closed ? 404 : 0
-				if state == .closed {
-					self.delegate?.menu(self, didClose: animated)
-				} else {
-					self.delegate?.menu(self, didOpen: animated)
-				}
-			case .current:
-				break
-			}
+        stateAnimator.addAnimations {
+            switch state {
+            case .open:
+                if let style = self.currentViewBlurStyle {
+                    self.container.blurView?.effect = UIBlurEffect(style: style)
+                }
+            case .closed:
+                self.container.blurView?.effect = nil
+            }
+        }
 
-			self.view.isUserInteractionEnabled = true
-			self.animator = nil
-			completion?()
-		}
+        stateAnimator.addCompletion { [unowned self] position in
+            switch position {
+            case .start:
+                self.delegate?.menu(self, didClose: animated)
+                self.container.blurView = nil
+            case .end:
+                self.view.tag = state == .closed ? 404 : 0
+                if state == .closed {
+                    self.delegate?.menu(self, didClose: animated)
+                    self.container.blurView = nil
+                } else {
+                    self.delegate?.menu(self, didOpen: animated)
+                }
+            case .current:
+                break
+            }
+
+            self.view.isUserInteractionEnabled = true
+            self.animator = nil
+            completion?()
+        }
 
 		return stateAnimator
 	}
