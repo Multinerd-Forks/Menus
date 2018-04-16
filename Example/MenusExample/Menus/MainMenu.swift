@@ -23,13 +23,17 @@ class MainMenu: UITableViewController, MenuType {
         return .left
     }
 
+    var currentViewBlurAlpha: CGFloat {
+        return 0.92
+    }
+
     var currentViewCornerRadius: CGFloat {
         return 20
     }
 
-	var isInteractiveSwipeEnabled: Bool {
-		return false
-	}
+    var isInteractiveSwipeEnabled: Bool {
+        return false
+    }
 
     var currentViewBlurStyle: UIBlurEffectStyle? {
         return .regular
@@ -46,18 +50,21 @@ class MainMenu: UITableViewController, MenuType {
         case 0:
             container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "NavigationController")
             close()
+
         case 1:
+            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "AboutViewController")
+            close()
+
+        case 2:
             container.leftMenu?.close {
                 self.container.rightMenu?.open()
             }
-        case 2:
+
+        case 3:
             let url = URL(string: "https://github.com/MobilionOSS/Menus")!
             close {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-        case 3:
-            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "AboutViewController")
-            close()
             
         default:
             break

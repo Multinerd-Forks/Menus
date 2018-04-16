@@ -65,7 +65,7 @@ public extension MenuType where Self: UIViewController {
     }
 
     public var currentViewBlurAlpha: CGFloat {
-        return 0.75
+        return 0.9
     }
 
 	public var animationDuration: TimeInterval {
