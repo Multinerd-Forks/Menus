@@ -27,6 +27,10 @@ class MainMenu: UITableViewController, MenuType {
         return 20
     }
 
+	var isInteractiveSwipeEnabled: Bool {
+		return false
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

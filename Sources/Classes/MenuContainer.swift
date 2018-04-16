@@ -10,14 +10,14 @@ import UIKit
 
 open class MenuContainer: UIViewController {
 
-    internal var leftEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer?
-    internal var rightEdgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer?
-	internal var currentViewPanGestureRecognizer: UIPanGestureRecognizer?
+    internal var leftEdgePanGestureRecognizer: ScreenEdgePanGestureRecognizer?
+    internal var rightEdgePanGestureRecognizer: ScreenEdgePanGestureRecognizer?
+	internal var currentViewPanGestureRecognizer: PanGestureRecognizer?
 
     internal var closeMenusTapGestureRecognizer: UITapGestureRecognizer?
-    internal var closeMenusPanGestureRecognizer: UIPanGestureRecognizer?
-    internal var leftMenuClosePanGestureRecognizer: UIPanGestureRecognizer?
-    internal var rightMenuClosePanGestureRecognizer: UIPanGestureRecognizer?
+
+	internal var leftMenuClosePanGestureRecognizer: PanGestureRecognizer?
+    internal var rightMenuClosePanGestureRecognizer: PanGestureRecognizer?
 
     internal var currentViewTransfrorm: CGAffineTransform = .identity
     internal var currentViewCornerRadius: CGFloat = 0

@@ -17,7 +17,7 @@ internal extension MenuContainer {
 		view.addSubview(controller.view)
 		controller.didMove(toParentViewController: self)
 
-		setCloseMenusPanGestureRecognizer()
+		setCurrentViewPanGestureRecognizer()
 		setCloseMenusTapGestureRecognizer()
 
 		setEdgePanGestureRecognizer(for: .left)
@@ -55,7 +55,7 @@ internal extension MenuContainer {
 		switch side {
 		case .left:
 			if let menu = leftMenu, menu.isInteractiveSwipeEnabled {
-				leftEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromLeftEdge(_:)))
+				leftEdgePanGestureRecognizer = ScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromLeftEdge(_:)))
 				leftEdgePanGestureRecognizer?.edges = .left
 				currentView?.addGestureRecognizer(leftEdgePanGestureRecognizer!)
 			} else {
@@ -63,7 +63,7 @@ internal extension MenuContainer {
 			}
 		case .right:
 			if let menu = rightMenu, menu.isInteractiveSwipeEnabled {
-				rightEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromRightEdge(_:)))
+				rightEdgePanGestureRecognizer = ScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromRightEdge(_:)))
 				rightEdgePanGestureRecognizer?.edges = .right
 				currentView?.addGestureRecognizer(rightEdgePanGestureRecognizer!)
 			} else {
@@ -76,14 +76,14 @@ internal extension MenuContainer {
 		switch side {
 		case .left:
 			if let menu = leftMenu, menu.isInteractiveSwipeEnabled {
-				leftMenuClosePanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanToCloseLeftMenu(_:)))
+				leftMenuClosePanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseLeftMenu(_:)))
 				menu.view.addGestureRecognizer(leftMenuClosePanGestureRecognizer!)
 			} else {
 				leftMenuClosePanGestureRecognizer?.remove(from: leftMenu?.view)
 			}
 		case .right:
 			if let menu = rightMenu, menu.isInteractiveSwipeEnabled {
-				rightMenuClosePanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanToCloseRightMenu(_:)))
+				rightMenuClosePanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseRightMenu(_:)))
 				menu.view.addGestureRecognizer(rightMenuClosePanGestureRecognizer!)
 			} else {
 				rightMenuClosePanGestureRecognizer?.remove(from: rightMenu?.view)
@@ -96,13 +96,8 @@ internal extension MenuContainer {
 		currentViewController?.view.addGestureRecognizer(closeMenusTapGestureRecognizer!)
 	}
 
-	func setCloseMenusPanGestureRecognizer() {
-		closeMenusPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanCurrentView(_:)))
-		currentViewController?.view.addGestureRecognizer(closeMenusPanGestureRecognizer!)
-	}
-
 	func setCurrentViewPanGestureRecognizer() {
-		currentViewPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanCurrentView(_:)))
+		currentViewPanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanCurrentView(_:)))
 		currentViewController?.view.addGestureRecognizer(currentViewPanGestureRecognizer!)
 	}
 

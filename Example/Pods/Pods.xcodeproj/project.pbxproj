@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070CD4182083E06900BFE36D /* PanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */; };
+		07ADC60020847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */; };
+		07ADC60220847D8F00715BBC /* MenuPanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ADC60120847D8F00715BBC /* MenuPanning.swift */; };
 		085069623585E9C4850C23204603A501 /* MenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAE4DE56BB8D6C0D22599D7E04FD82C /* MenuState.swift */; };
 		155117FE92D25F594D4065831D8BD427 /* Menus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 549415D9536B55B938B7B13C272F8147 /* Menus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B45EF0644A4572AB0C8D1E9E47348E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
@@ -37,35 +40,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06ED57E2BF99D610E7C9A9FC808C3A31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		06ED57E2BF99D610E7C9A9FC808C3A31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PanGestureRecognizer.swift; path = ../Classes/PanGestureRecognizer.swift; sourceTree = "<group>"; };
+		07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
+		07ADC60120847D8F00715BBC /* MenuPanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPanning.swift; sourceTree = "<group>"; };
 		0EAE4DE56BB8D6C0D22599D7E04FD82C /* MenuState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
 		1AA11055798DCA5FC5A67E82DC4746D9 /* MenuContainer+Selectors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Selectors.swift"; sourceTree = "<group>"; };
 		1D2459530537A25CF4955504AFF0E01B /* Pods-MenusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenusExample.debug.xcconfig"; sourceTree = "<group>"; };
 		2C5B3C0851B790455184AECC4FEE1553 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321832CF4A02BBFCD39C8EF62FA36AB8 /* MenuContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuContainer.swift; sourceTree = "<group>"; };
 		3ADEEC635A5139420184DFA9DC21B3A6 /* MenuContainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuContainable.swift; sourceTree = "<group>"; };
-		4F647377F2F953ED3B3D53E2CD86285B /* Menus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Menus.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4F647377F2F953ED3B3D53E2CD86285B /* Menus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Menus.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		549415D9536B55B938B7B13C272F8147 /* Menus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Menus-umbrella.h"; sourceTree = "<group>"; };
 		571129EF8D240A3D503F0633063BD9A1 /* Pods-MenusExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MenusExample-resources.sh"; sourceTree = "<group>"; };
 		57A1DA908616CE222C92E767205B8CA9 /* Pods-MenusExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MenusExample-dummy.m"; sourceTree = "<group>"; };
 		5CF95ECCF3EC1BA3560C4DAE4FA81800 /* Pods-MenusExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MenusExample-frameworks.sh"; sourceTree = "<group>"; };
 		631DDB46694BCCD899DA29B00F949B79 /* Menus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Menus.modulemap; sourceTree = "<group>"; };
-		632B549AC580474F2A8A9236B872DABE /* Menus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Menus.framework; path = Menus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		632B549AC580474F2A8A9236B872DABE /* Menus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Menus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EC9619F58D729B7162073497C8BB0E /* Menus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Menus.xcconfig; sourceTree = "<group>"; };
 		6994648EB532AA9179390CBA394B152D /* Pods-MenusExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MenusExample-umbrella.h"; sourceTree = "<group>"; };
 		848998E1A7FD9AC453AA8E8D79F2670B /* Pods-MenusExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MenusExample.modulemap"; sourceTree = "<group>"; };
 		9192736C1662924AB331A720791F79BE /* Menus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Menus-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0447B698BF75C05C234653B1905FCC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143FECA569358E9ABA6E89DCEA6CF6D /* MenuType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuType.swift; sourceTree = "<group>"; };
 		A62BB580CAE389D8F9A3D32165AD08CD /* Menus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Menus-prefix.pch"; sourceTree = "<group>"; };
 		A71328355D04471750B79810C617C798 /* MenuContainer+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Helpers.swift"; sourceTree = "<group>"; };
-		ABFE219F3C5984FB3F799B3E1B93BD8D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		ABFE219F3C5984FB3F799B3E1B93BD8D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B76044B6B1903F98F78C89040DB3BE41 /* Pods-MenusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenusExample.release.xcconfig"; sourceTree = "<group>"; };
 		B9509F932223E8A24902AE8011BF43A4 /* Pods-MenusExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenusExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		C20B9B0C042908A43DAD00959E0BA6B1 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		C333CD48F8C01DCF6450B1D2C9EAF76B /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MenusExample.framework; path = "Pods-MenusExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C333CD48F8C01DCF6450B1D2C9EAF76B /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DFE6D750CB18558B12AEFEB8A9FEC362 /* MenuSide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuSide.swift; sourceTree = "<group>"; };
 		E2F33A940F9E58D6DE5A848D23742533 /* MenuContainer+Setup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Setup.swift"; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		4B259F11ED3FD5BB72B4AE78D683FE32 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				07ADC60120847D8F00715BBC /* MenuPanning.swift */,
 				3ADEEC635A5139420184DFA9DC21B3A6 /* MenuContainable.swift */,
 				FE6E1317439505A4D53AD528AF17B4B3 /* MenuDelegate.swift */,
 				A143FECA569358E9ABA6E89DCEA6CF6D /* MenuType.swift */,
@@ -175,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				C20B9B0C042908A43DAD00959E0BA6B1 /* Extensions.swift */,
+				070CD4172083E06900BFE36D /* PanGestureRecognizer.swift */,
+				07ADC5FF20847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift */,
 			);
 			name = Common;
 			path = Sources/Common;
@@ -340,7 +349,10 @@
 				F8EC48960DC9509ADDA18A14833BF491 /* MenuContainer+Selectors.swift in Sources */,
 				B7C7B2844BC7FF651492022BF5CE4097 /* MenuContainer+Setup.swift in Sources */,
 				D8B5403C81783BDE8382BB9E4C6FA136 /* MenuContainer.swift in Sources */,
+				07ADC60020847C1F00715BBC /* ScreenEdgePanGestureRecognizer.swift in Sources */,
 				3BF24732990256EDA5440614F31DFF80 /* MenuDelegate.swift in Sources */,
+				07ADC60220847D8F00715BBC /* MenuPanning.swift in Sources */,
+				070CD4182083E06900BFE36D /* PanGestureRecognizer.swift in Sources */,
 				3148259DD7E58022140FFAE1BD33E2DB /* Menus-dummy.m in Sources */,
 				6B5C500419627547C9E2945BE42B1FCD /* MenuSide.swift in Sources */,
 				085069623585E9C4850C23204603A501 /* MenuState.swift in Sources */,

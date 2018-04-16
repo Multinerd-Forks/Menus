@@ -8,50 +8,16 @@
 // MARK: - Selectors
 internal extension MenuContainer {
 
-	@objc func didPanFromLeftEdge(_ sender: UIScreenEdgePanGestureRecognizer) {
+	@objc func didPanFromLeftEdge(_ sender: ScreenEdgePanGestureRecognizer) {
 		guard !hasOpenMenu else { return }
-		guard let menu = leftMenu else { return }
-
-		switch sender.state {
-		case .began:
-			menu.animateTransitionIfNeeded(to: .open)
-			menu.animator?.pauseAnimation()
-
-		case .changed:
-			menu.animator?.fractionComplete = fractionComplete(for: sender, in: menu)
-
-		case .ended, .cancelled:
-			if shouldCancelAnimation(for: sender, in: menu) {
-				menu.animator?.isReversed = true
-			}
-			menu.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-
-		default:
-			break
-		}
+		guard let menu = leftMenu, menu.isInteractiveSwipeEnabled else { return }
+		sender.handleEdgePan(for: menu)
 	}
 
-	@objc func didPanFromRightEdge(_ sender: UIScreenEdgePanGestureRecognizer) {
+	@objc func didPanFromRightEdge(_ sender: ScreenEdgePanGestureRecognizer) {
 		guard !hasOpenMenu else { return }
-		guard let menu = rightMenu else { return }
-
-		switch sender.state {
-		case .began:
-			menu.animateTransitionIfNeeded(to: .open)
-			menu.animator?.pauseAnimation()
-
-		case .changed:
-			menu.animator?.fractionComplete = fractionComplete(for: sender, in: menu)
-
-		case .ended, .cancelled:
-			if shouldCancelAnimation(for: sender, in: menu) {
-				menu.animator?.isReversed = true
-			}
-			menu.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-
-		default:
-			break
-		}
+		guard let menu = rightMenu, menu.isInteractiveSwipeEnabled else { return }
+		sender.handleEdgePan(for: menu)
 	}
 
 	@objc func didTapCurrentView() {
@@ -63,9 +29,10 @@ internal extension MenuContainer {
 		}
 	}
 
-	@objc func didPanCurrentView(_ sender: UIPanGestureRecognizer) {
+	@objc func didPanCurrentView(_ sender: PanGestureRecognizer) {
 		switch sender.state {
 		case .began:
+			print(sender.shouldOpenMenu(leftMenu, in: currentViewController?.view))
 			if sender.shouldOpenMenu(leftMenu, in: currentViewController?.view) {
 				leftMenu?.animateTransitionIfNeeded(to: .open)
 				leftMenu?.animator?.pauseAnimation()
@@ -77,7 +44,7 @@ internal extension MenuContainer {
 			}
 
 		case .changed:
-			leftMenu?.animator?.fractionComplete = fractionComplete(for: sender, in: leftMenu!)
+			leftMenu?.animator?.fractionComplete = sender.fractionComplete(in: leftMenu!)
 
 		case .ended, .cancelled:
 			leftMenu?.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
@@ -87,11 +54,11 @@ internal extension MenuContainer {
 		}
 	}
 
-	@objc func didPanToCloseLeftMenu(_ sender: UIPanGestureRecognizer) {
+	@objc func didPanToCloseLeftMenu(_ sender: PanGestureRecognizer) {
 
 	}
 
-	@objc func didPanToCloseRightMenu(_ sender: UIPanGestureRecognizer) {
+	@objc func didPanToCloseRightMenu(_ sender: PanGestureRecognizer) {
 
 	}
 
