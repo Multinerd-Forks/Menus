@@ -1,5 +1,5 @@
 //
-//  OptionsMenu.swift
+//  ClientsMenu.swift
 //  MenusExample
 //
 //  Created by Omar Albeik on 4/13/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Menus
 
-class OptionsMenu: UIViewController, MenuType {
+class ClientsMenu: UITableViewController, MenuType {
 
     var delegate: MenuDelegate?
 
@@ -27,6 +27,10 @@ class OptionsMenu: UIViewController, MenuType {
         return 1
     }
 
+    var currentViewCornerRadius: CGFloat {
+        return 0
+    }
+
     var menuWidth: CGFloat {
         return 200
     }
@@ -35,10 +39,8 @@ class OptionsMenu: UIViewController, MenuType {
         return nil
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = .clear
+    var isInteractiveSwipeEnabled: Bool {
+        return false
     }
 
 }

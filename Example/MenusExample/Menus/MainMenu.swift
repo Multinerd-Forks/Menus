@@ -32,7 +32,7 @@ class MainMenu: UITableViewController, MenuType {
 	}
 
     var currentViewBlurStyle: UIBlurEffectStyle? {
-        return .dark
+        return .regular
     }
 
     override func viewDidLoad() {
@@ -47,7 +47,9 @@ class MainMenu: UITableViewController, MenuType {
             container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "NavigationController")
             close()
         case 1:
-			container.rightMenu?.open(animated: true)
+            container.leftMenu?.close {
+                self.container.rightMenu?.open()
+            }
         case 2:
             let url = URL(string: "https://github.com/MobilionOSS/Menus")!
             close {

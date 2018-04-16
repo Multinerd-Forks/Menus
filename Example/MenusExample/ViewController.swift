@@ -22,6 +22,8 @@ class ViewController: UIViewController, MenuContainable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.makeTransparent()
+
         container?.leftMenu?.delegate = self
         container?.rightMenu?.delegate = self
     }
@@ -44,6 +46,18 @@ extension ViewController: MenuDelegate {
 
     func menu(_ menu: MenuViewController, didClose animated: Bool) {
         print("\(menu.side) menu did close")
+    }
+
+}
+
+private extension UINavigationBar {
+
+    func makeTransparent() {
+        isTranslucent = true
+        backgroundColor = .clear
+        barTintColor = .clear
+        setBackgroundImage(UIImage(), for: .default)
+        shadowImage = UIImage()
     }
 
 }

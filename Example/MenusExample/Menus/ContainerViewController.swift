@@ -19,7 +19,7 @@ class ContainerViewController: MenuContainer {
         currentViewController = storyboard!.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         
         leftMenu = storyboard!.instantiateViewController(withIdentifier: "MainMenu") as! MainMenu
-        rightMenu = storyboard!.instantiateViewController(withIdentifier: "OptionsMenu") as! OptionsMenu
+        rightMenu = storyboard!.instantiateViewController(withIdentifier: "ClientsMenu") as! ClientsMenu
 
     }
 

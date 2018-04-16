@@ -28,6 +28,8 @@ public protocol MenuType: class {
 
     var currentViewBlurStyle: UIBlurEffectStyle? { get }
 
+    var currentViewBlurAlpha: CGFloat { get }
+
 	var animationDuration: TimeInterval { get }
 
 	var animationDampingRatio: CGFloat { get }
@@ -60,6 +62,10 @@ public extension MenuType where Self: UIViewController {
 
     public var currentViewBlurStyle: UIBlurEffectStyle? {
         return .regular
+    }
+
+    public var currentViewBlurAlpha: CGFloat {
+        return 0.75
     }
 
 	public var animationDuration: TimeInterval {
@@ -133,6 +139,7 @@ internal extension MenuType where Self: UIViewController {
 	internal func animator(for state: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) -> UIViewPropertyAnimator {
 
         container.blurView = UIVisualEffectView()
+        container.blurView?.alpha = currentViewBlurAlpha
         switch state {
         case .open:
             self.container.blurView?.effect = nil
