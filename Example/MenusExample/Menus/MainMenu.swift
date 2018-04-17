@@ -23,19 +23,19 @@ class MainMenu: UITableViewController, MenuType {
         return .left
     }
 
-    var currentViewBlurAlpha: CGFloat {
-        return 0.92
-    }
-
     var currentViewCornerRadius: CGFloat {
         return 20
+    }
+
+    var currentViewScaleFactor: CGFloat {
+        return 0.75
     }
 
     var isInteractiveSwipeEnabled: Bool {
         return false
     }
 
-    var currentViewBlurStyle: UIBlurEffectStyle? {
+    var containerBlurStyle: UIBlurEffectStyle? {
         return .regular
     }
 

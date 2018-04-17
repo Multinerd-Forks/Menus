@@ -9,24 +9,29 @@ import UIKit
 
 internal protocol MenuPanning: class {
 
-    var menu: MenuViewController! { get set }
+    var menu: MenuViewController? { get set }
+
     var fractionComplete: CGFloat { get }
     var shouldCancelAnimation: Bool { get }
 
-	func remove(from view: UIView?)
+    func shouldOpenMenu(_ menu: MenuType?, in view: UIView?) -> Bool
+    func shouldCloseMenu(_ menu: MenuType?, in view: UIView?) -> Bool
+    func remove(from view: UIView?)
 
 }
 
+// MARK: - UIPanGestureRecognizer
 internal extension MenuPanning where Self: UIPanGestureRecognizer {
 
     internal var fractionComplete: CGFloat {
-        let xTranslation = translation(in: menu.view).x
+        guard let aMenu = menu else { return 0 }
+        let xTranslation = translation(in: aMenu.view).x
 
-        switch menu.side {
+        switch aMenu.side {
         case .left:
-            return xTranslation / menu.menuWidth
+            return xTranslation / aMenu.menuWidth
         case .right:
-            return -xTranslation / menu.menuWidth
+            return -xTranslation / aMenu.menuWidth
         }
     }
 
@@ -48,8 +53,71 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
         }
     }
 
-	func remove(from view: UIView?) {
-		view?.removeGestureRecognizer(self)
-	}
+    internal func shouldOpenMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
+        guard let aView = view else { return false }
+        guard let aMenu = menu else { return false }
+        guard aMenu.currentState != .open else { return false }
+
+        let xLocation = location(in: aView).x
+        let xVelocity = velocity(in: aView).x
+
+        if xLocation < aMenu.interactiveSwipeMargin && xVelocity > 0 {
+            return aMenu.side == .left
+        }
+        if xLocation > aView.frame.width - aMenu.interactiveSwipeMargin && xVelocity < 0 {
+            return aMenu.side == .right
+        }
+
+        return false
+    }
+
+    internal func shouldCloseMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
+        guard let aView = view else { return false }
+        guard let aMenu = menu else { return false }
+        guard aMenu.currentState == .open else { return false }
+
+        let xVelocity = velocity(in: aView).x
+
+        if xVelocity < 0 {
+            return aMenu.side == .left
+        }
+        if xVelocity > 0 {
+            return aMenu.side == .right
+        }
+
+        return false
+    }
+
+    func remove(from view: UIView?) {
+        view?.removeGestureRecognizer(self)
+    }
+
+}
+
+// MARK: - UIScreenEdgePanGestureRecognizer
+internal extension MenuPanning where Self: UIScreenEdgePanGestureRecognizer {
+
+    internal func handleEdgePan() {
+        guard let aMenu = menu else { return }
+
+        switch state {
+        case .began:
+            aMenu.animateTransitionIfNeeded(to: .open)
+            aMenu.animator?.pauseAnimation()
+
+        case .changed:
+            aMenu.animator?.fractionComplete = fractionComplete
+
+        case .ended, .cancelled:
+            if shouldCancelAnimation {
+                aMenu.animator?.isReversed = true
+            }
+            aMenu.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+            menu = nil
+
+        default:
+            break
+        }
+    }
 
 }

@@ -62,7 +62,7 @@ internal extension MenuContainer {
 
 		case .ended, .cancelled:
             if sender.shouldCancelAnimation {
-                sender.menu.animator?.isReversed = true
+                sender.menu?.animator?.isReversed = true
             }
 			sender.menu?.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
             sender.menu = nil
