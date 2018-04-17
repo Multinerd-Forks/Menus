@@ -11,21 +11,23 @@ import Menus
 
 class ViewController: UIViewController, MenuContainable {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        navigationController?.navigationBar.setBackgroundColor(.white)
+
+        container?.leftMenu?.delegate = self
+
+        container?.rightMenu = storyboard!.instantiateViewController(withIdentifier: "ClientsMenu") as! ClientsMenu
+        container?.rightMenu?.delegate = self
+    }
+    
     @IBAction func didTapLeftBarButtonItem(_ sender: UIBarButtonItem) {
         container?.leftMenu?.toggle()
     }
 
     @IBAction func didTapRightBarButtonItem(_ sender: UIBarButtonItem) {
         container?.rightMenu?.toggle()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationController?.navigationBar.makeTransparent()
-
-        container?.leftMenu?.delegate = self
-        container?.rightMenu?.delegate = self
     }
 
 }
@@ -46,18 +48,6 @@ extension ViewController: MenuDelegate {
 
     func menu(_ menu: MenuViewController, didClose animated: Bool) {
         print("\(menu.side) menu did close")
-    }
-
-}
-
-private extension UINavigationBar {
-
-    func makeTransparent() {
-        isTranslucent = true
-        backgroundColor = .clear
-        barTintColor = .clear
-        setBackgroundImage(UIImage(), for: .default)
-        shadowImage = UIImage()
     }
 
 }

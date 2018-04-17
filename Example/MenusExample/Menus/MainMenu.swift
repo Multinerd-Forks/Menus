@@ -48,7 +48,7 @@ class MainMenu: UITableViewController, MenuType {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "NavigationController")
+            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController")
             close()
 
         case 1:
@@ -61,6 +61,10 @@ class MainMenu: UITableViewController, MenuType {
             }
 
         case 3:
+            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "OpensourceNavigationController")
+            close()
+
+        case 4:
             let url = URL(string: "https://github.com/MobilionOSS/Menus")!
             close {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
