@@ -11,7 +11,7 @@ import Menus
 
 class ClientsMenu: UITableViewController, MenuType {
 
-    var delegate: MenuDelegate?
+    weak var delegate: MenuDelegate?
 
     var animator: UIViewPropertyAnimator?
 
@@ -41,6 +41,10 @@ class ClientsMenu: UITableViewController, MenuType {
 
     var isInteractiveSwipeEnabled: Bool {
         return false
+    }
+
+    @IBAction func didTap(_ sender: Any) {
+        close()
     }
 
 }

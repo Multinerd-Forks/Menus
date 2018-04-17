@@ -30,6 +30,8 @@ public protocol MenuType: class {
 
     var currentViewBlurAlpha: CGFloat { get }
 
+    var isCurrentViewUserInteractionEnabledWhileOpen: Bool { get }
+
 	var animationDuration: TimeInterval { get }
 
 	var animationDampingRatio: CGFloat { get }
@@ -68,16 +70,20 @@ public extension MenuType where Self: UIViewController {
         return 0.9
     }
 
+    public var isCurrentViewUserInteractionEnabledWhileOpen: Bool {
+        return false
+    }
+
 	public var animationDuration: TimeInterval {
-		return 0.4
+		return 0.5
 	}
 
 	public var animationDampingRatio: CGFloat {
-		return 0.8
+		return 0.75
 	}
 
 	public var currentViewScaleFactor: CGFloat {
-		return 0.8
+		return 0.75
 	}
 
 	public var currentViewCornerRadius: CGFloat {
@@ -174,15 +180,13 @@ internal extension MenuType where Self: UIViewController {
         stateAnimator.addCompletion { [unowned self] position in
             switch position {
             case .start:
-                self.delegate?.menu(self, didClose: animated)
-                self.container.blurView = nil
+                self.menuDidClose(animated: animated)
             case .end:
                 self.view.tag = state == .closed ? 404 : 0
                 if state == .closed {
-                    self.delegate?.menu(self, didClose: animated)
-                    self.container.blurView = nil
+                    self.menuDidClose(animated: animated)
                 } else {
-                    self.delegate?.menu(self, didOpen: animated)
+                    self.menuDidOpen(animated: animated)
                 }
             case .current:
                 break
@@ -195,6 +199,19 @@ internal extension MenuType where Self: UIViewController {
 
 		return stateAnimator
 	}
+
+    private func menuDidClose(animated: Bool) {
+        self.delegate?.menu(self, didClose: animated)
+        self.container.blurView = nil
+        self.container.currentViewController?.view.subviews.forEach { $0.isUserInteractionEnabled = true }
+    }
+
+    private func menuDidOpen(animated: Bool) {
+        self.delegate?.menu(self, didOpen: animated)
+        if !isCurrentViewUserInteractionEnabledWhileOpen {
+            self.container.currentViewController?.view.subviews.forEach { $0.isUserInteractionEnabled = false }
+        }
+    }
 
 	internal func animateTransitionIfNeeded(to state: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) {
 		if animator != nil { return }

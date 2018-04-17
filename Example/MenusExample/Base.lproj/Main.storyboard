@@ -240,7 +240,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istanbul" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-Qd-QAT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJz-rC-xvn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJz-rC-xvn">
                                 <rect key="frame" x="20" y="631.5" width="335" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,6 +469,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <color key="separatorColor" red="0.20000000000000001" green="0.25098039215686274" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="QSl-ui-y5x">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -734,10 +735,16 @@
                         <connections>
                             <outlet property="dataSource" destination="GdW-Ha-YxY" id="Ret-TU-dR9"/>
                             <outlet property="delegate" destination="GdW-Ha-YxY" id="0zp-sj-mUF"/>
+                            <outletCollection property="gestureRecognizers" destination="qdm-FT-eiB" appends="YES" id="25z-LW-1AK"/>
                         </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljw-ze-HEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qdm-FT-eiB">
+                    <connections>
+                        <action selector="didTap:" destination="GdW-Ha-YxY" id="qSk-lp-XkI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1396" y="133.5832083958021"/>
         </scene>

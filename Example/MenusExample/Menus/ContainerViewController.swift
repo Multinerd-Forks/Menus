@@ -16,9 +16,8 @@ class ContainerViewController: MenuContainer {
 
         view.backgroundColor = .black
 
-        currentViewController = storyboard!.instantiateViewController(withIdentifier: "HomeNavigationController") as! UINavigationController
-        
-        leftMenu = storyboard!.instantiateViewController(withIdentifier: "MainMenu") as! MainMenu
+        currentViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController")
+        leftMenu = storyboard?.instantiateViewController(withIdentifier: "MainMenu") as? MainMenu
     }
 
 }

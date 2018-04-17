@@ -18,10 +18,10 @@ class ViewController: UIViewController, MenuContainable {
 
         container?.leftMenu?.delegate = self
 
-        container?.rightMenu = storyboard!.instantiateViewController(withIdentifier: "ClientsMenu") as! ClientsMenu
+        container?.rightMenu = storyboard?.instantiateViewController(withIdentifier: "ClientsMenu") as? ClientsMenu
         container?.rightMenu?.delegate = self
     }
-    
+
     @IBAction func didTapLeftBarButtonItem(_ sender: UIBarButtonItem) {
         container?.leftMenu?.toggle()
     }

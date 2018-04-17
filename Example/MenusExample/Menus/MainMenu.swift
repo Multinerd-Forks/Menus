@@ -56,6 +56,7 @@ class MainMenu: UITableViewController, MenuType {
             close()
 
         case 2:
+            container.currentViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController")
             container.leftMenu?.close {
                 self.container.rightMenu?.open()
             }
@@ -69,7 +70,7 @@ class MainMenu: UITableViewController, MenuType {
             close {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-            
+
         default:
             break
         }

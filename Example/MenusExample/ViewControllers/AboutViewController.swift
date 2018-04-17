@@ -12,7 +12,8 @@ import Menus
 class AboutViewController: UIViewController, MenuContainable {
 
     @IBAction func didTapReturnHomeButton(_ sender: UIButton) {
-        container?.currentViewController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController")
+        let homeNavController = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationController")
+        container?.currentViewController = homeNavController
     }
 
 }

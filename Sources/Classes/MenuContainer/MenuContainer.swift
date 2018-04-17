@@ -82,6 +82,10 @@ open class MenuContainer: UIViewController {
         }
     }
 
+    open override var shouldAutorotate: Bool {
+        return !hasOpenMenu
+    }
+
 }
 
 // MARK: - Private Extensions
