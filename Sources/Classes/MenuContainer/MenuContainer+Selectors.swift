@@ -66,7 +66,7 @@ internal extension MenuContainer {
             }
 			sender.menu?.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
             sender.menu = nil
-            
+
 		default:
 			break
 		}

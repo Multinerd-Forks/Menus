@@ -51,5 +51,5 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
 	func remove(from view: UIView?) {
 		view?.removeGestureRecognizer(self)
 	}
-	
+
 }

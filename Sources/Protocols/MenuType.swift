@@ -30,7 +30,7 @@ public protocol MenuType: class {
 
     var currentViewBlurAlpha: CGFloat { get }
 
-    var isCurrentViewUserInteractionEnabledWhileOpen: Bool { get }
+    var isUserInteractionEnabledWhileOpen: Bool { get }
 
 	var animationDuration: TimeInterval { get }
 
@@ -70,7 +70,7 @@ public extension MenuType where Self: UIViewController {
         return 0.9
     }
 
-    public var isCurrentViewUserInteractionEnabledWhileOpen: Bool {
+    public var isUserInteractionEnabledWhileOpen: Bool {
         return false
     }
 
@@ -208,7 +208,7 @@ internal extension MenuType where Self: UIViewController {
 
     private func menuDidOpen(animated: Bool) {
         self.delegate?.menu(self, didOpen: animated)
-        if !isCurrentViewUserInteractionEnabledWhileOpen {
+        if !isUserInteractionEnabledWhileOpen {
             self.container.currentViewController?.view.subviews.forEach { $0.isUserInteractionEnabled = false }
         }
     }
@@ -217,7 +217,7 @@ internal extension MenuType where Self: UIViewController {
 		if animator != nil { return }
 
 		self.view.isUserInteractionEnabled = false
-		
+
 		switch state {
 		case .open:
 			container.leftMenu?.view.isHidden = side == .right

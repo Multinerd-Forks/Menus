@@ -17,14 +17,14 @@ internal class PanGestureRecognizer: UIPanGestureRecognizer, MenuPanning {
         guard aMenu.currentState != .open else { return false }
         let xLocation = location(in: aView).x
         let xVelocity = velocity(in: aView).x
-        
+
         if xLocation < aMenu.interactiveSwipeMargin && xVelocity > 0 {
             return aMenu.side == .left
         }
         if xLocation > aView.frame.width - aMenu.interactiveSwipeMargin && xVelocity < 0 {
             return aMenu.side == .right
         }
-        
+
         return false
     }
 
@@ -34,7 +34,7 @@ internal class PanGestureRecognizer: UIPanGestureRecognizer, MenuPanning {
         guard aMenu.currentState == .open else { return false }
 
         let xVelocity = velocity(in: aView).x
-        
+
         if xVelocity < 0 {
             return aMenu.side == .left
         }
@@ -44,5 +44,5 @@ internal class PanGestureRecognizer: UIPanGestureRecognizer, MenuPanning {
 
         return false
     }
-    
+
 }

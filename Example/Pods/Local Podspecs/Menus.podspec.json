@@ -1,6 +1,6 @@
 {
   "name": "Menus",
-  "version": "0.1",
+  "version": "0.2",
   "summary": "Lightweight protocol-oriented framework for creating interactive iOS side menus",
   "homepage": "https://github.com/MobilionOSS/Menus",
   "license": {
@@ -15,7 +15,7 @@
   "module_name": "Menus",
   "source": {
     "git": "https://github.com/MobilionOSS/Menus.git",
-    "tag": "0.1"
+    "tag": "0.2"
   },
   "source_files": "Sources/**/*.swift",
   "swift_version": "4.1",

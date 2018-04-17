@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = "Menus"
-    s.version = "0.1"
+    s.version = "0.2"
     s.summary = "Lightweight protocol-oriented framework for creating interactive iOS side menus"
 
     s.homepage = "https://github.com/MobilionOSS/Menus"
