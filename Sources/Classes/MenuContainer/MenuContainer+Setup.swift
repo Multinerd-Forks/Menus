@@ -26,7 +26,6 @@ internal extension MenuContainer {
 
 	func addMenu(_ menu: MenuViewController) {
         menu.container = self
-        menu.view.tag = 404
 		menu.view.isHidden = true
 
 		switch menu.side {
@@ -40,6 +39,7 @@ internal extension MenuContainer {
 
 		if let currentView = currentViewController?.view {
 			view.insertSubview(menu.view, belowSubview: currentView)
+			blurView.bringSubview(toFront: menu.view)
 		} else {
 			view.addSubview(menu.view)
 		}
@@ -48,33 +48,21 @@ internal extension MenuContainer {
 	}
 
     func setPanGestureRecognizers(for side: MenuSide) {
-        let currentView = currentViewController?.view
-
         switch side {
         case .left:
             if let menu = leftMenu, menu.isInteractiveSwipeEnabled {
-                leftEdgePanGestureRecognizer = ScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromLeftEdge(_:)))
-                leftEdgePanGestureRecognizer?.edges = .left
-                currentView?.addGestureRecognizer(leftEdgePanGestureRecognizer!)
-
                 leftMenuPanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseLeftMenu(_:)))
                 menu.view.addGestureRecognizer(leftMenuPanGestureRecognizer!)
 
             } else {
-                leftEdgePanGestureRecognizer?.remove(from: currentView)
                 leftMenuPanGestureRecognizer?.remove(from: leftMenu?.view)
             }
         case .right:
             if let menu = rightMenu, menu.isInteractiveSwipeEnabled {
-                rightEdgePanGestureRecognizer = ScreenEdgePanGestureRecognizer(target: self, action: #selector(didPanFromRightEdge(_:)))
-                rightEdgePanGestureRecognizer?.edges = .right
-                currentView?.addGestureRecognizer(rightEdgePanGestureRecognizer!)
-
                 rightMenuPanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseRightMenu(_:)))
                 menu.view.addGestureRecognizer(rightMenuPanGestureRecognizer!)
 
             } else {
-                rightEdgePanGestureRecognizer?.remove(from: currentView)
                 rightMenuPanGestureRecognizer?.remove(from: rightMenu?.view)
             }
         }

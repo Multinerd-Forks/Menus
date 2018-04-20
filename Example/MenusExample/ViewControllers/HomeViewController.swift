@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  MenusExample
 //
 //  Created by Omar Albeik on 4/13/18.
@@ -9,16 +9,15 @@
 import UIKit
 import Menus
 
-class ViewController: UIViewController, MenuContainable {
+class HomeViewController: UIViewController, MenuContainable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.setBackgroundColor(.white)
+        container?.rightMenu = storyboard?.instantiateViewController(withIdentifier: "ClientsMenu") as? ClientsMenu
 
         container?.leftMenu?.delegate = self
-
-        container?.rightMenu = storyboard?.instantiateViewController(withIdentifier: "ClientsMenu") as? ClientsMenu
         container?.rightMenu?.delegate = self
     }
 
@@ -32,7 +31,7 @@ class ViewController: UIViewController, MenuContainable {
 
 }
 
-extension ViewController: MenuDelegate {
+extension HomeViewController: MenuDelegate {
 
     func menu(_ menu: MenuViewController, willOpen animated: Bool) {
         print("\(menu.side) menu will open")

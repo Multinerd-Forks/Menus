@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MenusExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MenusExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,38 +52,38 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1136"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-BG-sGh" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1154"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1136"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We ❤️ Opensource" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b15-1T-yRF">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="20" width="375" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menus" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-Gp-rLx">
-                                                <rect key="frame" x="112" y="548" width="150" height="150"/>
+                                                <rect key="frame" x="112" y="518" width="150" height="150"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our mission is to accelerate innovation in Turkey by open sourcing our software and helping others do!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCE-Hw-WoF">
-                                                <rect key="frame" x="20" y="103.5" width="335" height="64.5"/>
+                                                <rect key="frame" x="20" y="73.5" width="335" height="64.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PieCrust" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-up-XIf">
-                                                <rect key="frame" x="20" y="368" width="335" height="31.5"/>
+                                                <rect key="frame" x="20" y="338" width="335" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlN-kc-XXs">
-                                                <rect key="frame" x="20" y="407.5" width="335" height="50.5"/>
+                                                <rect key="frame" x="20" y="377.5" width="335" height="50.5"/>
                                                 <string key="text">Protocol oriented abstraction layer built on top of UIKit to create iOS apps quickly and efficiently without the use of Storyboards or Interface builder.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.19134553108808294" green="0.19134553108808294" blue="0.19134553108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-ex-B1n">
-                                                <rect key="frame" x="20" y="466" width="335" height="32"/>
+                                                <rect key="frame" x="20" y="436" width="335" height="32"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="View on Github">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,41 +93,41 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="piecrust" translatesAutoresizingMaskIntoConstraints="NO" id="RAp-UC-84t">
-                                                <rect key="frame" x="112.5" y="218" width="150" height="150"/>
+                                                <rect key="frame" x="112.5" y="188" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="JAM-Jv-p1K"/>
                                                     <constraint firstAttribute="height" constant="150" id="wKy-5M-qs6"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eto-M9-Z5j">
-                                                <rect key="frame" x="20" y="698" width="335" height="31.5"/>
+                                                <rect key="frame" x="20" y="668" width="335" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lightweight protocol-oriented framework for creating interactive iOS side menus" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUQ-Xh-M5e">
-                                                <rect key="frame" x="20" y="737.5" width="335" height="33.5"/>
+                                                <rect key="frame" x="20" y="707.5" width="335" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.19134553108808294" green="0.19134553108808294" blue="0.19134553108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tc_id_validator" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-WP-3b5">
-                                                <rect key="frame" x="112.5" y="861" width="150" height="150"/>
+                                                <rect key="frame" x="112.5" y="831" width="150" height="150"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TCNumberValidator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmb-2n-UYA">
-                                                <rect key="frame" x="20" y="1011" width="335" height="31.5"/>
+                                                <rect key="frame" x="20" y="981" width="335" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkish id number validating algorithm in common programming languages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cut-op-2gZ">
-                                                <rect key="frame" x="20" y="1050.5" width="335" height="33.5"/>
+                                                <rect key="frame" x="20" y="1020.5" width="335" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.19134553108808294" green="0.19134553108808294" blue="0.19134553108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BK-o8-1m1">
-                                                <rect key="frame" x="20" y="779" width="335" height="32"/>
+                                                <rect key="frame" x="20" y="749" width="335" height="32"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="View on Github">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +137,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYj-nu-1gM">
-                                                <rect key="frame" x="20" y="1092" width="335" height="32"/>
+                                                <rect key="frame" x="20" y="1062" width="335" height="32"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="View on Github">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.25098039220000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,7 +151,7 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dYj-nu-1gM" secondAttribute="bottom" constant="30" id="04W-Z7-PoA"/>
                                             <constraint firstAttribute="trailing" secondItem="xlN-kc-XXs" secondAttribute="trailing" constant="20" id="1mP-IZ-1V9"/>
-                                            <constraint firstItem="b15-1T-yRF" firstAttribute="top" secondItem="dr1-BG-sGh" secondAttribute="top" constant="50" id="22O-hN-4sp"/>
+                                            <constraint firstItem="b15-1T-yRF" firstAttribute="top" secondItem="dr1-BG-sGh" secondAttribute="top" constant="20" id="22O-hN-4sp"/>
                                             <constraint firstItem="hyw-Gp-rLx" firstAttribute="height" secondItem="RAp-UC-84t" secondAttribute="height" id="58r-HU-tLh"/>
                                             <constraint firstAttribute="trailing" secondItem="Xmb-2n-UYA" secondAttribute="trailing" constant="20" id="5Gn-9Y-6iS"/>
                                             <constraint firstItem="xlN-kc-XXs" firstAttribute="top" secondItem="C1D-up-XIf" secondAttribute="bottom" constant="8" id="5dx-jQ-v1D"/>
@@ -268,7 +268,7 @@
         <scene sceneID="RQt-q0-RTQ">
             <objects>
                 <tableViewController storyboardIdentifier="MainMenu" id="IgQ-7A-KiB" customClass="MainMenu" customModule="MenusExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hE-jS-Oxu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hE-jS-Oxu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

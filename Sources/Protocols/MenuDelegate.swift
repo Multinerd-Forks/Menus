@@ -41,6 +41,7 @@ public protocol MenuDelegate: class {
 
 }
 
+// MARK: - MenuDelegate, optional methods.
 public extension MenuDelegate {
 
     /// Called before menu is about to be opened.

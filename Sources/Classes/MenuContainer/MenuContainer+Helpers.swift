@@ -8,7 +8,7 @@
 // MARK: - Helpers
 internal extension MenuContainer {
 
-	func menu(for side: MenuSide) -> MenuViewController? {
+	internal func menu(for side: MenuSide) -> MenuViewController? {
 		switch side {
 		case .left:
 			return leftMenu

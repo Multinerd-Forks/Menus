@@ -6,11 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Menus:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Menus: e5248d63e27f15c09db67cbac76914cfae41d54a
 
 PODFILE CHECKSUM: af5fb0eca03daad4a1ec12d459793baa147fe231
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

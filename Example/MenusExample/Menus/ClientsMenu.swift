@@ -11,24 +11,14 @@ import Menus
 
 class ClientsMenu: UITableViewController, MenuType {
 
-    weak var delegate: MenuDelegate?
-
-    var animator: UIViewPropertyAnimator?
-
     var container: MenuContainer!
 
     var shouldCloseWhenTappingCurrentView: Bool = true
 
+    weak var delegate: MenuDelegate?
+
     var side: MenuSide {
         return .right
-    }
-
-    var currentViewScaleFactor: CGFloat {
-        return 1
-    }
-
-    var currentViewCornerRadius: CGFloat {
-        return 0
     }
 
     var menuWidth: CGFloat {

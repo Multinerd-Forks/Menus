@@ -56,7 +56,7 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
     internal func shouldOpenMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
         guard let aView = view else { return false }
         guard let aMenu = menu else { return false }
-        guard aMenu.currentState != .open else { return false }
+        guard aMenu.state == .closed else { return false }
 
         let xLocation = location(in: aView).x
         let xVelocity = velocity(in: aView).x
@@ -74,7 +74,7 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
     internal func shouldCloseMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
         guard let aView = view else { return false }
         guard let aMenu = menu else { return false }
-        guard aMenu.currentState == .open else { return false }
+        guard aMenu.state == .open else { return false }
 
         let xVelocity = velocity(in: aView).x
 
@@ -90,34 +90,6 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
 
     func remove(from view: UIView?) {
         view?.removeGestureRecognizer(self)
-    }
-
-}
-
-// MARK: - UIScreenEdgePanGestureRecognizer
-internal extension MenuPanning where Self: UIScreenEdgePanGestureRecognizer {
-
-    internal func handleEdgePan() {
-        guard let aMenu = menu else { return }
-
-        switch state {
-        case .began:
-            aMenu.animateTransitionIfNeeded(to: .open)
-            aMenu.animator?.pauseAnimation()
-
-        case .changed:
-            aMenu.animator?.fractionComplete = fractionComplete
-
-        case .ended, .cancelled:
-            if shouldCancelAnimation {
-                aMenu.animator?.isReversed = true
-            }
-            aMenu.animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-            menu = nil
-
-        default:
-            break
-        }
     }
 
 }

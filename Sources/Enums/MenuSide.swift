@@ -9,6 +9,19 @@
 import Foundation
 
 public enum MenuSide {
-    case left
-    case right
+	case left
+	case right
+}
+
+internal extension MenuSide {
+
+	internal var key: String {
+		switch self {
+		case .left:
+			return "Menus: Left Menu"
+		case .right:
+			return "Menus: Right Menu"
+		}
+	}
+
 }

@@ -134,7 +134,6 @@
 				0786EF052080C7FA00BBA5C6 /* Frameworks */,
 				0786EF062080C7FA00BBA5C6 /* Resources */,
 				729B5830439BC0359B35F839 /* [CP] Embed Pods Frameworks */,
-				0DE0099FEF820BC9126FA80C /* [CP] Copy Pods Resources */,
 				07D3CA2C2086105400C34E46 /* ShellScript */,
 			);
 			buildRules = (
@@ -205,21 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		0DE0099FEF820BC9126FA80C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenusExample/Pods-MenusExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		0FDB5C5BE02EFA8D3CA196FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

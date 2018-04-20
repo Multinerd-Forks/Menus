@@ -11,13 +11,11 @@ import Menus
 
 class MainMenu: UITableViewController, MenuType {
 
-    weak var delegate: MenuDelegate?
-
-    var animator: UIViewPropertyAnimator?
-
     var container: MenuContainer!
 
     var shouldCloseWhenTappingCurrentView: Bool = true
+
+    weak var delegate: MenuDelegate?
 
     var side: MenuSide {
         return .left
@@ -36,7 +34,15 @@ class MainMenu: UITableViewController, MenuType {
     }
 
     var containerBlurStyle: UIBlurEffectStyle? {
-        return .regular
+        return .dark
+    }
+
+	var containerBlurAlpha: CGFloat {
+		return 0.9
+	}
+
+    var interactiveSwipeMargin: CGFloat {
+        return 150
     }
 
     override func viewDidLoad() {
@@ -66,10 +72,22 @@ class MainMenu: UITableViewController, MenuType {
             close()
 
         case 4:
-            let url = URL(string: "https://github.com/MobilionOSS/Menus")!
-            close {
+            let alert = UIAlertController(title: "View on Github", message: "Do you want to leave the app and open Safari", preferredStyle: .alert)
+
+            let openAction = UIAlertAction(title: "Open", style: .default) { _ in
+                let url = URL(string: "https://github.com/MobilionOSS/Menus")!
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.open()
+            }
+
+            alert.addAction(openAction)
+            alert.addAction(cancelAction)
+
+            close()
+            present(alert, animated: true, completion: nil)
 
         default:
             break
