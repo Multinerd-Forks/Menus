@@ -92,7 +92,7 @@ open class MenuContainer: UIViewController {
 		blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		blurView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 	}
-	
+
 }
 
 // MARK: - Private Extensions

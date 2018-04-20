@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = "Menus"
-    s.version = "0.2"
+    s.version = "0.3"
     s.summary = "Lightweight protocol-oriented framework for creating interactive iOS side menus"
 
     s.homepage = "https://github.com/MobilionOSS/Menus"
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     s.swift_version = "4.1"
     s.requires_arc = true
 
-    s.ios.deployment_target = "10.0"
+    s.ios.deployment_target = "9.0"
     s.ios.framework  = "UIKit"
 end

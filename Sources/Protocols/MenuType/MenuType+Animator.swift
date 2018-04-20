@@ -8,36 +8,8 @@
 
 internal extension MenuType where Self: UIViewController {
 
-	internal func prepareBlurView(for finalState: MenuState) {
-		guard let style = containerBlurStyle else {
-			container.blurView.isHidden = true
-			return
-		}
-
-		container.blurView.isHidden = false
-		container.blurView.alpha = containerBlurAlpha
-
-		switch finalState {
-		case .closed:
-			container.blurView.effect = UIBlurEffect(style: style)
-
-		case .open:
-			container.blurView.effect = nil
-		}
-	}
-
-	internal func animateBlurView(for finalState: MenuState) {
-		switch finalState {
-		case .closed:
-			self.container.blurView.effect = nil
-		case .open:
-			if let style = self.containerBlurStyle {
-				self.container.blurView.effect = UIBlurEffect(style: style)
-			}
-		}
-	}
-
     @available(iOS 10.0, *)
+	// swiftlint:disable:next cyclomatic_complexity function_body_length
     internal func animateTransitionIfNeeded(to finalState: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) {
         if container.animator != nil { return } // animator is already defined
 

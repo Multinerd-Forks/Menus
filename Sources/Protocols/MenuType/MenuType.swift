@@ -91,9 +91,9 @@ public extension MenuType where Self: UIViewController {
         return 250
     }
 
-	/// The blur animation style for container view when opening the window. (default is .regular)
+	/// The blur animation style for container view when opening the window. (default is .dark)
 	public var containerBlurStyle: UIBlurEffectStyle? {
-		return .regular
+		return .dark
 	}
 
     /// The blur animation end alpha for container view when opening the window. (default is 1)

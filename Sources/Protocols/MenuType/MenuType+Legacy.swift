@@ -11,6 +11,8 @@ internal extension MenuType where Self: UIViewController {
     /// Open or close menu for iOS 9 where UIViewPropertyAnimator is not available
     internal func animateWithoutAnimator(to finalState: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) {
 
+		prepareBlurView(for: finalState)
+
         switch finalState {
         case .open:
             delegate?.menu(self, willOpen: animated)
@@ -19,6 +21,8 @@ internal extension MenuType where Self: UIViewController {
         }
 
         UIView.animate(withDuration: animationDuration, delay: 0, usingSpringWithDamping: animationDampingRatio, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { [unowned self] in
+
+			self.animateBlurView(for: finalState)
 
             switch finalState {
             case .open:

@@ -17,44 +17,52 @@ internal extension MenuContainer {
 		}
 	}
 
+	// swiftlint:disable:next cyclomatic_complexity
 	@objc func didPanCurrentView(_ sender: PanGestureRecognizer) {
-        switch sender.state {
-        case .began:
+		switch sender.state {
+		case .began:
 
-            if hasOpenMenu {
-                if sender.shouldCloseMenu(leftMenu, in: currentViewController?.view) {
-                    leftMenu?.close()
-                }
-                if sender.shouldCloseMenu(rightMenu, in: currentViewController?.view) {
-                    rightMenu?.close()
-                }
+			if hasOpenMenu {
+				if sender.shouldCloseMenu(leftMenu, in: currentViewController?.view) {
+					leftMenu?.close()
+				}
+				if sender.shouldCloseMenu(rightMenu, in: currentViewController?.view) {
+					rightMenu?.close()
+				}
 
-            } else {
-                if sender.shouldOpenMenu(leftMenu, in: currentViewController?.view) {
-                    sender.menu = leftMenu
-                }
+			} else {
+				if sender.shouldOpenMenu(leftMenu, in: currentViewController?.view) {
+					sender.menu = leftMenu
+				}
 
-                if sender.shouldOpenMenu(rightMenu, in: currentViewController?.view) {
-                    sender.menu = rightMenu
-                }
+				if sender.shouldOpenMenu(rightMenu, in: currentViewController?.view) {
+					sender.menu = rightMenu
+				}
 
-                sender.menu?.animateTransitionIfNeeded(to: .open)
-                animator?.pauseAnimation()
-            }
+				if #available(iOS 10.0, *) {
+					sender.menu?.animateTransitionIfNeeded(to: .open)
+					animator?.pauseAnimation()
+				}
 
-        case .changed:
-            animator?.fractionComplete = sender.fractionComplete
+			}
 
-        case .ended, .cancelled:
-            if sender.shouldCancelAnimation {
-                animator?.isReversed = true
-            }
-            animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-            sender.menu = nil
+		case .changed:
+			if #available(iOS 10.0, *) {
+				animator?.fractionComplete = sender.fractionComplete
+			}
 
-        default:
-            break
-        }
+		case .ended, .cancelled:
+			if #available(iOS 10.0, *) {
+				if sender.shouldCancelAnimation {
+					animator?.isReversed = true
+				}
+				animator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+			}
+			sender.menu = nil
+
+		default:
+			break
+		}
 	}
 
 	@objc func didPanToCloseLeftMenu(_ sender: PanGestureRecognizer) {

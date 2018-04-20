@@ -14,7 +14,6 @@
 		0789BCF12088985B00008E2D /* MenuType+Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789BCF02088985B00008E2D /* MenuType+Animator.swift */; };
 		0789BCF3208898E700008E2D /* MenuType+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0789BCF2208898E700008E2D /* MenuType+Helpers.swift */; };
 		07D3CA3D208618AD00C34E46 /* PanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3CA2E208618AD00C34E46 /* PanGestureRecognizer.swift */; };
-		07D3CA3E208618AD00C34E46 /* ScreenEdgePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3CA2F208618AD00C34E46 /* ScreenEdgePanGestureRecognizer.swift */; };
 		07D3CA3F208618AD00C34E46 /* MenuContainer+Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3CA31208618AD00C34E46 /* MenuContainer+Selectors.swift */; };
 		07D3CA40208618AD00C34E46 /* MenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3CA32208618AD00C34E46 /* MenuContainer.swift */; };
 		07D3CA41208618AD00C34E46 /* MenuContainer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3CA33208618AD00C34E46 /* MenuContainer+Helpers.swift */; };
@@ -48,7 +47,6 @@
 		0789BCF02088985B00008E2D /* MenuType+Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuType+Animator.swift"; sourceTree = "<group>"; };
 		0789BCF2208898E700008E2D /* MenuType+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuType+Helpers.swift"; sourceTree = "<group>"; };
 		07D3CA2E208618AD00C34E46 /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureRecognizer.swift; sourceTree = "<group>"; };
-		07D3CA2F208618AD00C34E46 /* ScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
 		07D3CA31208618AD00C34E46 /* MenuContainer+Selectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Selectors.swift"; sourceTree = "<group>"; };
 		07D3CA32208618AD00C34E46 /* MenuContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainer.swift; sourceTree = "<group>"; };
 		07D3CA33208618AD00C34E46 /* MenuContainer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Helpers.swift"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				07D3CA2E208618AD00C34E46 /* PanGestureRecognizer.swift */,
-				07D3CA2F208618AD00C34E46 /* ScreenEdgePanGestureRecognizer.swift */,
 				07D3CA30208618AD00C34E46 /* MenuContainer */,
 			);
 			path = Classes;
@@ -314,7 +311,6 @@
 				07D3CA48208618AD00C34E46 /* MenuType.swift in Sources */,
 				07D3CA42208618AD00C34E46 /* MenuContainer+Setup.swift in Sources */,
 				07D3CA45208618AD00C34E46 /* MenuDelegate.swift in Sources */,
-				07D3CA3E208618AD00C34E46 /* ScreenEdgePanGestureRecognizer.swift in Sources */,
 				0789BCF12088985B00008E2D /* MenuType+Animator.swift in Sources */,
 				07D3CA46208618AD00C34E46 /* MenuPanning.swift in Sources */,
 				07D3CA47208618AD00C34E46 /* MenuContainable.swift in Sources */,

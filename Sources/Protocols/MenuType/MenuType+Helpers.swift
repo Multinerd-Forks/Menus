@@ -8,6 +8,37 @@
 
 internal extension MenuType where Self: UIViewController {
 
+	/// Perpare menu's container blur view for animation.
+	internal func prepareBlurView(for finalState: MenuState) {
+		guard let style = containerBlurStyle else {
+			container.blurView.isHidden = true
+			return
+		}
+
+		container.blurView.isHidden = false
+		container.blurView.alpha = containerBlurAlpha
+
+		switch finalState {
+		case .closed:
+			container.blurView.effect = UIBlurEffect(style: style)
+
+		case .open:
+			container.blurView.effect = nil
+		}
+	}
+
+	/// Animate menu's container blur view style.
+	internal func animateBlurView(for finalState: MenuState) {
+		switch finalState {
+		case .closed:
+			self.container.blurView.effect = nil
+		case .open:
+			if let style = self.containerBlurStyle {
+				self.container.blurView.effect = UIBlurEffect(style: style)
+			}
+		}
+	}
+
     /// Concatenated transform for the opened state.
     internal var transformForOpened: CGAffineTransform {
         var translationX: CGFloat {
