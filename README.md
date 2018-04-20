@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Menus<h1/>
 <p align="center">
-  Lightweight protocol-oriented framework for creating interactive iOS side menus
+  <p align="center">Lightweight protocol-oriented framework for creating interactive iOS side menus</p>
 </p>
 
 <p align="center">
