@@ -29,12 +29,37 @@ class ClientsMenu: UITableViewController, MenuType {
         return nil
     }
 
-    var isInteractiveSwipeEnabled: Bool {
-        return false
+    var interactiveSwipeMargin: CGFloat {
+        return UIScreen.main.bounds.width
     }
 
     @IBAction func didTap(_ sender: Any) {
         close()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("ClientsMenu, viewDidLoad")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ClientsMenu, viewWillAppear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("ClientsMenu, viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ClientsMenu, viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("ClientsMenu, viewDidDisappear")
     }
 
 }

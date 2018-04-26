@@ -1,5 +1,5 @@
 PODS:
-  - Menus (0.2)
+  - Menus (0.3)
 
 DEPENDENCIES:
   - Menus (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Menus: e5248d63e27f15c09db67cbac76914cfae41d54a
+  Menus: 051541d3e651ec4b1ec7c5ad57c1f06c038044d3
 
 PODFILE CHECKSUM: af5fb0eca03daad4a1ec12d459793baa147fe231
 

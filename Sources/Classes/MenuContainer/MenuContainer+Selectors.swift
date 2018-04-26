@@ -22,37 +22,38 @@ internal extension MenuContainer {
 		switch sender.state {
 		case .began:
 
-			if hasOpenMenu {
-				if sender.shouldCloseMenu(leftMenu, in: currentViewController?.view) {
-					leftMenu?.close()
-				}
-				if sender.shouldCloseMenu(rightMenu, in: currentViewController?.view) {
-					rightMenu?.close()
-				}
+            if sender.shouldOpenMenu(leftMenu, in: currentViewController?.view) {
+                sender.menu = leftMenu
+            }
 
-			} else {
-				if sender.shouldOpenMenu(leftMenu, in: currentViewController?.view) {
-					sender.menu = leftMenu
-				}
+            if sender.shouldOpenMenu(rightMenu, in: currentViewController?.view) {
+                sender.menu = rightMenu
+            }
 
-				if sender.shouldOpenMenu(rightMenu, in: currentViewController?.view) {
-					sender.menu = rightMenu
-				}
+            if leftMenu?.state == .open {
+                sender.menu = leftMenu
+            }
 
-				if #available(iOS 10.0, *) {
-					sender.menu?.animateTransitionIfNeeded(to: .open)
-					animator?.pauseAnimation()
-				}
+            if rightMenu?.state == .open {
+                sender.menu = rightMenu
+            }
 
-			}
+            if #available(iOS 10.0, *) {
+                sender.menu?.animateTransitionIfNeeded(to: hasOpenMenu ? .closed : .open)
+                animator?.pauseAnimation()
+            } else {
+                hasOpenMenu ? sender.menu?.close() : sender.menu?.open()
+            }
 
 		case .changed:
-			if #available(iOS 10.0, *) {
-				animator?.fractionComplete = sender.fractionComplete
+
+            if #available(iOS 10.0, *) {
+                animator?.fractionComplete = sender.fractionComplete
 			}
 
 		case .ended, .cancelled:
-			if #available(iOS 10.0, *) {
+
+            if #available(iOS 10.0, *) {
 				if sender.shouldCancelAnimation {
 					animator?.isReversed = true
 				}
@@ -66,11 +67,13 @@ internal extension MenuContainer {
 	}
 
 	@objc func didPanToCloseLeftMenu(_ sender: PanGestureRecognizer) {
-
+        print("didPanToCloseLeftMenu")
+//        print(sender.location(in: leftMenu?.view))
 	}
 
 	@objc func didPanToCloseRightMenu(_ sender: PanGestureRecognizer) {
-
+        print("didPanToCloseRightMenu")
+//        print(sender.location(in: rightMenu?.view))
 	}
 
 }

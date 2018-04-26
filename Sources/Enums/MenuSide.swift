@@ -13,6 +13,7 @@ public enum MenuSide {
 	case right
 }
 
+// MARK: - Internal helpers
 internal extension MenuSide {
 
 	internal var key: String {

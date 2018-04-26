@@ -35,7 +35,15 @@ open class MenuContainer: UIViewController {
     }
 
     public var currentViewController: UIViewController? {
+        willSet {
+            print("----- willSet")
+            guard newValue != currentViewController else {
+                return
+            }
+        }
         didSet {
+            guard oldValue != currentViewController else { return }
+            print("----- didSet")
             oldValue?.remove()
             guard let controller = currentViewController else { return }
             addCurrentViewController(controller)
@@ -92,6 +100,15 @@ open class MenuContainer: UIViewController {
 		blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 		blurView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 	}
+
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension MenuContainer: UIGestureRecognizerDelegate {
+
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 
 }
 

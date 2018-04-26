@@ -13,9 +13,30 @@ class OpenSourceViewController: UIViewController, MenuContainable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("OpenSourceViewController, viewDidLoad")
 
         navigationController?.navigationBar.setBackgroundColor(.white)
         container?.rightMenu = nil
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("OpenSourceViewController, viewWillAppear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("OpenSourceViewController, viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("OpenSourceViewController, viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("OpenSourceViewController, viewDidDisappear")
     }
 
     @IBAction func didTapLeftBarButtonItem(_ sender: UIBarButtonItem) {

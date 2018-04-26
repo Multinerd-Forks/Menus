@@ -18,6 +18,8 @@
 		07C3EFA92080CD5500B34DA3 /* ClientsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFA82080CD5500B34DA3 /* ClientsMenu.swift */; };
 		07C3EFAB2080CE3500B34DA3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFAA2080CE3500B34DA3 /* HomeViewController.swift */; };
 		07C3EFAD2080DBCD00B34DA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */; };
+		07EF7165208F09760076E875 /* ScanMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF7164208F09760076E875 /* ScanMenu.swift */; };
+		07EF7167208F27A30076E875 /* FullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EF7166208F27A30076E875 /* FullScreenViewController.swift */; };
 		4B9A2A8AB98616D2BC9F711F /* Pods_MenusExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49EF47846A2ECEAF5CB0760 /* Pods_MenusExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		07C3EFA82080CD5500B34DA3 /* ClientsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsMenu.swift; sourceTree = "<group>"; };
 		07C3EFAA2080CE3500B34DA3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		07EF7164208F09760076E875 /* ScanMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanMenu.swift; sourceTree = "<group>"; };
+		07EF7166208F27A30076E875 /* FullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewController.swift; sourceTree = "<group>"; };
 		B1780B5DFA6B14B3ADFF07F3 /* Pods-MenusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenusExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenusExample/Pods-MenusExample.release.xcconfig"; sourceTree = "<group>"; };
 		E5FF0059F500FB902739FE54 /* Pods-MenusExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenusExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenusExample/Pods-MenusExample.debug.xcconfig"; sourceTree = "<group>"; };
 		F49EF47846A2ECEAF5CB0760 /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				07C3EFAA2080CE3500B34DA3 /* HomeViewController.swift */,
+				07EF7166208F27A30076E875 /* FullScreenViewController.swift */,
 				070DB5B02085DD82004F7264 /* OpenSourceViewController.swift */,
 				07C3EFAC2080DBCD00B34DA3 /* AboutViewController.swift */,
 			);
@@ -67,6 +72,7 @@
 			children = (
 				0786EF0D2080C7FA00BBA5C6 /* ContainerViewController.swift */,
 				07C3EFA62080CD0400B34DA3 /* MainMenu.swift */,
+				07EF7164208F09760076E875 /* ScanMenu.swift */,
 				07C3EFA82080CD5500B34DA3 /* ClientsMenu.swift */,
 			);
 			path = Menus;
@@ -253,6 +259,8 @@
 				07C3EFAB2080CE3500B34DA3 /* HomeViewController.swift in Sources */,
 				070DB5B42085F402004F7264 /* Extensions.swift in Sources */,
 				0786EF0E2080C7FA00BBA5C6 /* ContainerViewController.swift in Sources */,
+				07EF7167208F27A30076E875 /* FullScreenViewController.swift in Sources */,
+				07EF7165208F09760076E875 /* ScanMenu.swift in Sources */,
 				07C3EFA92080CD5500B34DA3 /* ClientsMenu.swift in Sources */,
 				07C3EFA72080CD0400B34DA3 /* MainMenu.swift in Sources */,
 				0786EF0C2080C7FA00BBA5C6 /* AppDelegate.swift in Sources */,
@@ -404,7 +412,10 @@
 				DEVELOPMENT_TEAM = C3VKVFB3SA;
 				INFOPLIST_FILE = MenusExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.mobilion.MenusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -421,7 +432,10 @@
 				DEVELOPMENT_TEAM = C3VKVFB3SA;
 				INFOPLIST_FILE = MenusExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tr.com.mobilion.MenusExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

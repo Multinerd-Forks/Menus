@@ -42,13 +42,34 @@ class MainMenu: UITableViewController, MenuType {
 	}
 
     var interactiveSwipeMargin: CGFloat {
-        return 150
+        return UIScreen.main.bounds.width
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("MainMenu, viewDidLoad")
 
         view.backgroundColor = .clear
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("MainMenu, viewWillAppear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("MainMenu, viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("MainMenu, viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("MainMenu, viewDidDisappear")
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,6 +93,10 @@ class MainMenu: UITableViewController, MenuType {
             close()
 
         case 4:
+            container.currentViewController = FullScreenViewController()
+            close()
+
+        case 5:
             let alert = UIAlertController(title: "View on Github", message: "Do you want to leave the app and open Safari", preferredStyle: .alert)
 
             let openAction = UIAlertAction(title: "Open", style: .default) { _ in

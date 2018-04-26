@@ -16,4 +16,29 @@ class AboutViewController: UIViewController, MenuContainable {
         container?.currentViewController = homeNavController
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("AboutViewController, viewDidLoad")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("AboutViewController, viewWillAppear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("AboutViewController, viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("AboutViewController, viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("AboutViewController, viewDidDisappear")
+    }
+
 }

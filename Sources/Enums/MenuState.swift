@@ -26,14 +26,7 @@ public extension MenuState {
 
 }
 
-internal extension MenuState {
-
-    internal init(_ isOpen: Bool) {
-        self = isOpen ? .open : .closed
-    }
-
-}
-
+// MARK: - CustomStringConvertible
 extension MenuState: CustomStringConvertible {
 
     public var description: String {
@@ -43,6 +36,15 @@ extension MenuState: CustomStringConvertible {
         case .open:
             return "open"
         }
+    }
+
+}
+
+// MARK: - Internal initializers
+internal extension MenuState {
+
+    internal init(_ isOpen: Bool) {
+        self = isOpen ? .open : .closed
     }
 
 }

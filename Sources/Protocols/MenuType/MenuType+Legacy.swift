@@ -15,8 +15,10 @@ internal extension MenuType where Self: UIViewController {
 
         switch finalState {
         case .open:
+            viewWillAppear(animated)
             delegate?.menu(self, willOpen: animated)
         case .closed:
+            viewWillDisappear(animated)
             delegate?.menu(self, willClose: animated)
         }
 
@@ -39,9 +41,11 @@ internal extension MenuType where Self: UIViewController {
                 switch finalState {
                 case .open:
                     self.container.currentViewController?.view.subviews.forEach { $0.isUserInteractionEnabled = false }
+                    self.viewDidAppear(animated)
                     self.delegate?.menu(self, didOpen: animated)
                 case .closed:
                     self.container.currentViewController?.view.subviews.forEach { $0.isUserInteractionEnabled = true }
+                    self.viewDidDisappear(animated)
                     self.delegate?.menu(self, didClose: animated)
                 }
 

@@ -15,7 +15,6 @@ internal extension MenuContainer {
 
 		addChildViewController(controller)
 		view.addSubview(controller.view)
-		controller.didMove(toParentViewController: self)
 
 		setCurrentViewPanGestureRecognizer()
 		setCurrentViewTapGestureRecognizer()
@@ -44,7 +43,6 @@ internal extension MenuContainer {
 			view.addSubview(menu.view)
 		}
 
-		menu.didMove(toParentViewController: self)
 	}
 
     func setPanGestureRecognizers(for side: MenuSide) {
@@ -52,6 +50,7 @@ internal extension MenuContainer {
         case .left:
             if let menu = leftMenu, menu.isInteractiveSwipeEnabled {
                 leftMenuPanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseLeftMenu(_:)))
+                leftMenuPanGestureRecognizer!.delegate = self
                 menu.view.addGestureRecognizer(leftMenuPanGestureRecognizer!)
 
             } else {
@@ -60,6 +59,7 @@ internal extension MenuContainer {
         case .right:
             if let menu = rightMenu, menu.isInteractiveSwipeEnabled {
                 rightMenuPanGestureRecognizer = PanGestureRecognizer(target: self, action: #selector(didPanToCloseRightMenu(_:)))
+                rightMenuPanGestureRecognizer?.delegate = self
                 menu.view.addGestureRecognizer(rightMenuPanGestureRecognizer!)
 
             } else {
