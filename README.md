@@ -1,7 +1,6 @@
 <p align="center">
   <img align="center" src="https://cdn.rawgit.com/MobilionOSS/Menus/master/Assets/readme_logo.svg" title="Menus">
 </p>
-<h1 align="center">Menus<h1/>
 <p align="center">Lightweight protocol-oriented framework for creating interactive iOS side menus</p>
 
 <p align="center">
