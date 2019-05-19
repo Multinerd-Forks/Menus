@@ -10,7 +10,7 @@ internal extension MenuType where Self: UIViewController {
 
     @available(iOS 10.0, *)
 	// swiftlint:disable:next cyclomatic_complexity function_body_length
-    internal func animateTransitionIfNeeded(to finalState: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) {
+    func animateTransitionIfNeeded(to finalState: MenuState, animated: Bool = true, _ completion: (() -> Void)? = nil) {
         if container.animator != nil { return } // animator is already defined
 
 		prepareBlurView(for: finalState)
@@ -70,6 +70,7 @@ internal extension MenuType where Self: UIViewController {
             case .current:
                 // print("current", "\(self.state)", "reversed: \(animator.isReversed)")
                 break
+
             }
 
             switch self.state {

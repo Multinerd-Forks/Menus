@@ -15,7 +15,7 @@ public enum MenuSide {
 
 internal extension MenuSide {
 
-	internal var key: String {
+    var key: String {
 		switch self {
 		case .left:
 			return "Menus: Left Menu"

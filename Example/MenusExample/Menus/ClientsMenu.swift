@@ -25,7 +25,7 @@ class ClientsMenu: UITableViewController, MenuType {
         return 200
     }
 
-    var containerBlurStyle: UIBlurEffectStyle? {
+    var containerBlurStyle: UIBlurEffect.Style? {
         return nil
     }
 

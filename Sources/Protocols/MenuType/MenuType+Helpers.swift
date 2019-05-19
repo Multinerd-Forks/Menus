@@ -9,7 +9,7 @@
 internal extension MenuType where Self: UIViewController {
 
 	/// Perpare menu's container blur view for animation.
-	internal func prepareBlurView(for finalState: MenuState) {
+    func prepareBlurView(for finalState: MenuState) {
 		guard let style = containerBlurStyle else {
 			container.blurView.isHidden = true
 			return
@@ -28,7 +28,7 @@ internal extension MenuType where Self: UIViewController {
 	}
 
 	/// Animate menu's container blur view style.
-	internal func animateBlurView(for finalState: MenuState) {
+    func animateBlurView(for finalState: MenuState) {
 		switch finalState {
 		case .closed:
 			self.container.blurView.effect = nil
@@ -40,7 +40,7 @@ internal extension MenuType where Self: UIViewController {
 	}
 
     /// Concatenated transform for the opened state.
-    internal var transformForOpened: CGAffineTransform {
+    var transformForOpened: CGAffineTransform {
         var translationX: CGFloat {
             switch side {
             case .left:
@@ -54,7 +54,7 @@ internal extension MenuType where Self: UIViewController {
         return xTransform.concatenating(scaleTransform)
     }
 
-    internal func setState(_ state: MenuState?) {
+    func setState(_ state: MenuState?) {
         guard let aState = state else {
             UserDefaults.standard.set(nil, forKey: side.key)
             UserDefaults.standard.synchronize()

@@ -33,7 +33,7 @@ class MainMenu: UITableViewController, MenuType {
         return false
     }
 
-    var containerBlurStyle: UIBlurEffectStyle? {
+    var containerBlurStyle: UIBlurEffect.Style? {
         return .dark
     }
 

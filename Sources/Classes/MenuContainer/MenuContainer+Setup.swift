@@ -13,9 +13,9 @@ internal extension MenuContainer {
 		controller.view.transform = currentViewTransfrorm
 		controller.view.layer.cornerRadius = currentViewCornerRadius
 
-		addChildViewController(controller)
+        addChildViewController(controller)
 		view.addSubview(controller.view)
-		controller.didMove(toParentViewController: self)
+        controller.didMove(toParentViewController: self)
 
 		setCurrentViewPanGestureRecognizer()
 		setCurrentViewTapGestureRecognizer()
@@ -39,12 +39,12 @@ internal extension MenuContainer {
 
 		if let currentView = currentViewController?.view {
 			view.insertSubview(menu.view, belowSubview: currentView)
-			blurView.bringSubview(toFront: menu.view)
+            blurView.bringSubview(toFront: menu.view)
 		} else {
 			view.addSubview(menu.view)
 		}
 
-		menu.didMove(toParentViewController: self)
+        menu.didMove(toParentViewController: self)
 	}
 
     func setPanGestureRecognizers(for side: MenuSide) {

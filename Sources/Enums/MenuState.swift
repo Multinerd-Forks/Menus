@@ -15,7 +15,7 @@ public enum MenuState {
 
 public extension MenuState {
 
-    public var opposite: MenuState {
+    var opposite: MenuState {
         switch self {
         case .closed:
             return .open
@@ -28,7 +28,7 @@ public extension MenuState {
 
 internal extension MenuState {
 
-    internal init(_ isOpen: Bool) {
+    init(_ isOpen: Bool) {
         self = isOpen ? .open : .closed
     }
 

@@ -31,7 +31,7 @@ public protocol MenuType: class {
     var menuWidth: CGFloat { get }
 
 	/// The blur animation style for container view when opening the window.
-	var containerBlurStyle: UIBlurEffectStyle? { get }
+    var containerBlurStyle: UIBlurEffect.Style? { get }
 
     /// The blur animation end alpha for container view when opening the window.
     var containerBlurAlpha: CGFloat { get }
@@ -81,53 +81,53 @@ public protocol MenuType: class {
 public extension MenuType where Self: UIViewController {
 
     /// Whether the menu is closed or open.
-    public var state: MenuState {
+    var state: MenuState {
         let isOpen = UserDefaults.standard.object(forKey: side.key) as? Bool ?? false
         return .init(isOpen)
     }
 
     /// The width of the menu. (default is 250)
-    public var menuWidth: CGFloat {
+    var menuWidth: CGFloat {
         return 250
     }
 
 	/// The blur animation style for container view when opening the window. (default is .dark)
-	public var containerBlurStyle: UIBlurEffectStyle? {
+    var containerBlurStyle: UIBlurEffect.Style? {
 		return .dark
 	}
 
     /// The blur animation end alpha for container view when opening the window. (default is 1)
-    public var containerBlurAlpha: CGFloat {
+    var containerBlurAlpha: CGFloat {
         return 1
     }
 
     /// The duration of opening and closing animations in seconds. (default is 0.5)
-    public var animationDuration: TimeInterval {
+    var animationDuration: TimeInterval {
         return 0.5
     }
 
     /// The damping ratio for opening and closing animations, should be between 0 and 1. (default is 0.75)
-    public var animationDampingRatio: CGFloat {
+    var animationDampingRatio: CGFloat {
         return 0.75
     }
 
     /// The scale factor that represents how much should the current view grow or shrink when opening the menu, should be between 0 and 1. (default is 1)
-    public var currentViewScaleFactor: CGFloat {
+    var currentViewScaleFactor: CGFloat {
         return 1
     }
 
     /// The end corner radius of current view when opening the menu. (default is 0)
-    public var currentViewCornerRadius: CGFloat {
+    var currentViewCornerRadius: CGFloat {
         return 0
     }
 
     /// Whether the menu should be opened or closed interactively or not. (default is true)
-    public var isInteractiveSwipeEnabled: Bool {
+    var isInteractiveSwipeEnabled: Bool {
         return true
     }
 
     /// The margin from edge in current view where the menu can be opened when panning in. (default is 75)
-    public var interactiveSwipeMargin: CGFloat {
+    var interactiveSwipeMargin: CGFloat {
         return 75
     }
 
@@ -136,7 +136,7 @@ public extension MenuType where Self: UIViewController {
     /// - Parameters:
     ///   - animated: whether menu opening should be animated or not. (default is true)
     ///   - completion: optional conpletion handler to be called after the menu is open. (default is nil)
-    public func open(animated: Bool = true, _ completion: (() -> Void)? = nil) {
+    func open(animated: Bool = true, _ completion: (() -> Void)? = nil) {
         if #available(iOS 10.0, *) {
             animateTransitionIfNeeded(to: .open, animated: animated, completion)
             container.animator?.startAnimation()
@@ -150,7 +150,7 @@ public extension MenuType where Self: UIViewController {
     /// - Parameters:
     ///   - animated: whether menu closing should be animated or not. (default is true)
     ///   - completion: optional conpletion handler to be called after the menu is closed. (default is nil)
-    public func close(animated: Bool = true, _ completion: (() -> Void)? = nil) {
+    func close(animated: Bool = true, _ completion: (() -> Void)? = nil) {
         if #available(iOS 10.0, *) {
             animateTransitionIfNeeded(to: .closed, animated: animated, completion)
             container.animator?.startAnimation()
@@ -164,7 +164,7 @@ public extension MenuType where Self: UIViewController {
     /// - Parameters:
     ///   - animated: whether menu toggling should be animated or not. (default is true)
     ///   - completion: optional conpletion handler to be called after the menu is toggled. (default is nil)
-    public func toggle(animated: Bool = true, _ completion: (() -> Void)? = nil) {
+    func toggle(animated: Bool = true, _ completion: (() -> Void)? = nil) {
         switch state {
         case .open:
             close(animated: animated, completion)

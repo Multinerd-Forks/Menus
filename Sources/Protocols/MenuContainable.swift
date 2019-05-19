@@ -20,7 +20,7 @@ public protocol MenuContainable: class {
 public extension MenuContainable where Self: UIViewController {
 
     /// Menus container view controller.
-    public var container: MenuContainer? {
+    var container: MenuContainer? {
         if let nav = navigationController {
             if let tab = nav.tabBarController {
                 return tab.parent as? MenuContainer

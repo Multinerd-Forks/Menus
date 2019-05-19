@@ -23,7 +23,7 @@ internal protocol MenuPanning: class {
 // MARK: - UIPanGestureRecognizer
 internal extension MenuPanning where Self: UIPanGestureRecognizer {
 
-    internal var fractionComplete: CGFloat {
+    var fractionComplete: CGFloat {
         guard let aMenu = menu else { return 0 }
         let xTranslation = translation(in: aMenu.view).x
 
@@ -35,7 +35,7 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
         }
     }
 
-    internal var shouldCancelAnimation: Bool {
+    var shouldCancelAnimation: Bool {
         guard let aMenu = menu else { return false }
         let xLocation = location(in: aMenu.view).x
         let ratio: CGFloat = xLocation / aMenu.menuWidth
@@ -53,7 +53,7 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
         }
     }
 
-    internal func shouldOpenMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
+    func shouldOpenMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
         guard let aView = view else { return false }
         guard let aMenu = menu else { return false }
         guard aMenu.state == .closed else { return false }
@@ -71,7 +71,7 @@ internal extension MenuPanning where Self: UIPanGestureRecognizer {
         return false
     }
 
-    internal func shouldCloseMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
+    func shouldCloseMenu(_ menu: MenuType?, in view: UIView?) -> Bool {
         guard let aView = view else { return false }
         guard let aMenu = menu else { return false }
         guard aMenu.state == .open else { return false }
