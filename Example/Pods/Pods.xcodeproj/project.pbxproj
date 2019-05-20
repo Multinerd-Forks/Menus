@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,26 +48,26 @@
 		3061D65A81C2B759792EDCFB54408D19 /* MenuContainer+Setup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Setup.swift"; sourceTree = "<group>"; };
 		3208BCD86F3ED7EF7814DF750D5F287B /* Menus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Menus-umbrella.h"; sourceTree = "<group>"; };
 		34E9D04C828698771044DF5479559935 /* MenuType+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuType+Helpers.swift"; sourceTree = "<group>"; };
-		36DB691F70141965033F3E04CE3A4D1B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		36DB691F70141965033F3E04CE3A4D1B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		462351DD3AD12E28A2EABCABB2B7C40F /* MenuType+Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuType+Animator.swift"; sourceTree = "<group>"; };
 		4827B8ACA49A428DB575C3918F9D6DC6 /* MenuContainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuContainable.swift; sourceTree = "<group>"; };
-		5032883EEC7ADB4676E1E72CC859841E /* Menus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Menus.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5032883EEC7ADB4676E1E72CC859841E /* Menus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Menus.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		504FE8BC9FFF279702AB7EC874F391CC /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PanGestureRecognizer.swift; sourceTree = "<group>"; };
 		571129EF8D240A3D503F0633063BD9A1 /* Pods-MenusExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MenusExample-resources.sh"; sourceTree = "<group>"; };
 		57A1DA908616CE222C92E767205B8CA9 /* Pods-MenusExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MenusExample-dummy.m"; sourceTree = "<group>"; };
 		5CF95ECCF3EC1BA3560C4DAE4FA81800 /* Pods-MenusExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MenusExample-frameworks.sh"; sourceTree = "<group>"; };
-		632B549AC580474F2A8A9236B872DABE /* Menus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Menus.framework; path = Menus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		632B549AC580474F2A8A9236B872DABE /* Menus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Menus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6994648EB532AA9179390CBA394B152D /* Pods-MenusExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MenusExample-umbrella.h"; sourceTree = "<group>"; };
 		848998E1A7FD9AC453AA8E8D79F2670B /* Pods-MenusExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MenusExample.modulemap"; sourceTree = "<group>"; };
 		880D8731A20F84309D4636F93CD36B7A /* Menus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Menus-prefix.pch"; sourceTree = "<group>"; };
 		8DD191E9B458BA86298D353A11B5B99B /* MenuState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0447B698BF75C05C234653B1905FCC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A067344567A75877D52EB3C3E2E38D6E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A067344567A75877D52EB3C3E2E38D6E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B76044B6B1903F98F78C89040DB3BE41 /* Pods-MenusExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MenusExample.release.xcconfig"; sourceTree = "<group>"; };
 		B9509F932223E8A24902AE8011BF43A4 /* Pods-MenusExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MenusExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		C333CD48F8C01DCF6450B1D2C9EAF76B /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MenusExample.framework; path = "Pods-MenusExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C333CD48F8C01DCF6450B1D2C9EAF76B /* Pods_MenusExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenusExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BA33CB108241896E7F6049C76E4C71 /* MenuType+Legacy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuType+Legacy.swift"; sourceTree = "<group>"; };
 		D6B5FEE2B13052564B60E7E8CDD1E615 /* MenuContainer+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MenuContainer+Helpers.swift"; sourceTree = "<group>"; };
 		D6D2302849B9FE0EE6210B66718CC316 /* MenuDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +150,6 @@
 				E742D8782B0B417977A56E53CE96BF79 /* MenuContainer+Selectors.swift */,
 				3061D65A81C2B759792EDCFB54408D19 /* MenuContainer+Setup.swift */,
 			);
-			name = MenuContainer;
 			path = MenuContainer;
 			sourceTree = "<group>";
 		};
@@ -212,7 +211,6 @@
 				34E9D04C828698771044DF5479559935 /* MenuType+Helpers.swift */,
 				D4BA33CB108241896E7F6049C76E4C71 /* MenuType+Legacy.swift */,
 			);
-			name = MenuType;
 			path = MenuType;
 			sourceTree = "<group>";
 		};
@@ -331,12 +329,18 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					0A1C1DD8B88314B79BD216FFBCCB5B0B = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -576,7 +580,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -645,7 +649,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.1;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

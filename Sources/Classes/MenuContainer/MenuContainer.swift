@@ -99,8 +99,8 @@ open class MenuContainer: UIViewController {
 private extension UIViewController {
 
     func remove() {
-        willMove(toParentViewController: nil)
-        removeFromParentViewController()
+        willMove(toParent: nil)
+        removeFromParent()
         view.removeFromSuperview()
     }
 
